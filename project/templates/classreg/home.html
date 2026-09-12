@@ -1,0 +1,107 @@
+{% extends "classreg/navbar.html"%}
+{%load static%}
+{% block nav_block %}
+
+<section>
+    <div>
+        <img src="{% static 'images/home.jpg' %}" alt="Logo" width="100%" height="600px" class="d-inline-block align-text-top" />
+        <h1 class="text-center mt-5 fw-bold">
+            Welcome to Class Registration System
+        </h1>
+        <p class="text-center">
+            Welcome to our Class Registration Portal, a simple and convenient platform designed to make course registration easier for students. Browse available classes, explore course details, check schedules, and register for the courses that best match your academic goals. Our system provides an easy-to-use interface that helps students manage their class registrations efficiently and keeps all course information organized in one place. Get started today and take the next step toward planning your academic journey.
+        </p>
+        <p class="px-2 text-center">
+            Our Class Registration Portal is designed to simplify the process of enrolling in courses. With just a few clicks, students can access a wide range of classes, view detailed information about each course, and register for the ones that align with their academic interests. The portal also provides real-time updates on class availability and schedules, ensuring that students can make informed decisions about their course selections. Whether you're a new student or returning for another semester, our system is here to support your educational journey.
+        </p>
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center m-3 fw-bold">
+            Why Choose Us?
+        </h1>
+        <div class='row'>
+            <div class='col-md-3'>
+                <div class='card h-100'>
+                    <img src="{% static 'images/hcard3.jpg' %}" alt="Logo" width="100%" height="300px" class="card-img-top d-inline-block align-text-top" />
+                    <div class='card-body'>
+                        <h3 class="card-title text-center mt-3 fw-bold">
+                        Easy Registration
+                    </h3>
+                    <p class="card-text text-center">
+                        Register for available classes through a simple and user-friendly interface.</p>
+                    </div>
+                    <a href='/register' class='btn btn-warning d-block mx-auto mb-2'>Register Now</a>
+                </div>
+            </div>
+            <div class='col-md-3'>
+                <div class='card'>
+                    <img src="{% static 'images/hcard1.jpg' %}" alt="Logo" width="100%" height="300px" class="card-img-top d-inline-block align-text-top" />
+                    <div class='card-body'>
+                        <h3 class="card-title text-center mt-3 fw-bold">
+                        Course Information
+                    </h3>
+                    <p class="card-text text-center">
+                        View important details about courses, schedules, and availability.</p>
+                    </div>
+                    <a href='/register' class='btn btn-warning d-block mx-auto mb-2'>Register Now</a>
+                </div>
+            </div>
+            <div class='col-md-3'>
+                <div class='card'>
+                    <img src="{% static 'images/hcard2.jpg' %}" alt="Logo" width="100%" height="300px" class="card-img-top d-inline-block align-text-top" />
+                    <div class='card-body'>
+                        <h3 class="card-title text-center mt-3 fw-bold">
+                            Organized Management
+                        </h3>
+                        <p class="card-text text-center">
+                            Keep class and registration information organized in one centralized system.</p>
+                    </div>
+                    <a href='/register' class='btn btn-warning d-block mx-auto mb-2'>Register Now</a>
+                </div>
+            </div>
+            <div class='col-md-3'>
+                <div class='card'>
+                    <img src="{% static 'images/hcard4.jpg' %}" alt="Logo" width="100%" height="300px" class="card-img-top d-inline-block align-text-top" />
+                    <div class='card-body'>
+                        <h3 class="card-title text-center mt-3 fw-bold">
+                            User-Friendly Design
+                        </h3>
+                        <p class="card-text text-center">
+                            Navigate the platform easily from registration to course management.</p>
+                    </div>
+                    <a href='/register' class='btn btn-warning d-block mx-auto mb-2'>Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container mt-5 bg-primary p-5 rounded text-white">
+    <h1 class="text-center my-2 pb-2 fw-bold text-warning ">
+        Still Hunting for a Job ?
+    </h1>
+    <p class="text-center">
+        We are committed to providing high-quality education and training to our students. Our courses are designed to meet the needs of today's learners and prepare them for success in their chosen fields.
+    </p>
+    <a href='/register' class='w-25 btn btn-warning d-block mx-auto'>Register Now</a>
+</section>
+<section class="container my-5">
+    <h1 class="text-center my-3 fw-bold">
+        Parent Feedbacks
+    </h1>
+    <div class='row'>
+        <div class='col-md-3'>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bP8QmYKpZ8Y?si=9JUsLiy9kTiPZ3w5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        <div class='col-md-3'>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bP8QmYKpZ8Y?si=9JUsLiy9kTiPZ3w5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        <div class='col-md-3'>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bP8QmYKpZ8Y?si=9JUsLiy9kTiPZ3w5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        <div class='col-md-3'>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bP8QmYKpZ8Y?si=9JUsLiy9kTiPZ3w5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+    </div>
+</section>
+
+{% endblock %}

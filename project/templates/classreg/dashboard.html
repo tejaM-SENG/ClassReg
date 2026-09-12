@@ -1,0 +1,53 @@
+{%extends 'classreg/navbar.html'%}
+{%block nav_block%}
+<section class='container my-5'>
+    <center><h1 class='fw-bold mt-3'>Admin Page</h1></center>
+    <div class='text-end'><a href='/logout/'><button class='btn btn-danger'>Logout</button></a></div>
+    <h3 class='fw-bold mt-5'>Parent Data</h3>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Student Name</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        {%for i in p %}
+        <tbody>
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.Phone}}</td>
+                <td>{{i.Student_Name}}</td>
+                <td>{{i.Message}}</td>
+                <td><a href='/Pdelete/{{i.id}}/'><button class='btn btn-outline-danger'><i class='bi bi-trash'></i></button></a></td>
+            </tr>
+        </tbody>
+        {%endfor%}
+    </table>
+    <h3 class='fw-bold mt-5'>Contact Data</h3>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        {%for i in c %}
+        <tbody>
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.Phone}}</td>
+                <td>{{i.Message}}</td>
+                <td><a href='/Cdelete/{{i.id}}/'><button class='btn btn-outline-danger'><i class='bi bi-trash'></i></button></a></td>
+            </tr>
+        </tbody>
+        {%endfor%}
+    </table>
+</section>
+{%endblock%}
