@@ -35,7 +35,7 @@ def contact(request):
         f = ContactForm(request.POST)
         if f.is_valid():
             f.save()
-            return redirect('/home')
+            return redirect('/')
     return render(request, 'classreg/contact.html', {'form':f})
 
 def news(request):
@@ -47,7 +47,7 @@ def registerview(request):
         f = ParentForm(request.POST)
         if f.is_valid():
             f.save()
-            return redirect('/home')
+            return redirect('/')
     return render(request, 'registration/register.html', {'form':f})
 
 @login_required
