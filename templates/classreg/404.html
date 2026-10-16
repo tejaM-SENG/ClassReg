@@ -1,0 +1,57 @@
+{% extends "classreg/navbar.html" %}
+{% load static %}
+
+{% block nav_block %}
+
+
+<section class="error-page">
+    <div class="error-content">
+
+        <!-- Error Label -->
+        <div class="error-label">
+            <i class="bi bi-mortarboard-fill"></i>
+            ClassHub Navigation
+        </div>
+
+        <!-- Error Number -->
+        <h1 class="error-number">404</h1>
+
+        <!-- Error Message -->
+        <h2 class="error-title">
+            Oops! Lost Your Way?
+        </h2>
+
+        <p class="error-description">
+            We couldn't find the page you're looking for.
+            It may have been moved, removed, or the link might
+            be incorrect. Don't worry — your learning journey
+            can continue from here.
+        </p>
+
+        <!-- Actions -->
+        <div class="error-actions">
+
+            <a href="/home/" class="error-btn error-btn-home">
+                <i class="bi bi-house-door-fill"></i>
+                Return to Home
+            </a>
+
+            <button type="button"
+                    class="error-btn error-btn-back"
+                    onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = '/home/'; }">
+                <i class="bi bi-arrow-left"></i>
+                Go Back
+            </button>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="error-footer">
+            <i class="bi bi-book-half me-1"></i>
+            ClassHub — Your Learning Journey Continues
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

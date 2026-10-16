@@ -1,0 +1,267 @@
+{% extends "classreg/navbar.html" %}
+
+{% block nav_block %}
+
+<!-- =========================
+     CONTACT HERO
+========================= -->
+<section class="contact-hero">
+    <div class="container text-center">
+
+        <span class="badge bg-warning text-dark px-3 py-2 mb-3">
+            CLASSHUB SUPPORT
+        </span>
+
+        <h1 class="fw-bold">
+            Contact Us
+        </h1>
+
+        <p>
+            Have a question or need assistance? Get in touch with us
+            and we'll be happy to help.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     CONTACT INFORMATION
+========================= -->
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold">
+            We'd Love to Hear From You
+        </h2>
+
+        <p class="section-description mx-auto">
+            Whether you have a question about registration, courses,
+            schedules, or the ClassHub platform, feel free to contact us.
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+
+            <div class="contact-info-card h-100">
+
+                <h3 class="fw-bold mb-4">
+                    Get in Touch
+                </h3>
+
+
+                <!-- Address -->
+                <div class="contact-info-item">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+
+                    <div>
+                        <h5>Address</h5>
+
+                        <p>
+                            Elearn Infotech<br>
+                            Hyderabad, Telangana<br>
+                            India
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="contact-info-item">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+
+                    <div>
+                        <h5>Email</h5>
+
+                        <p>
+                            info@elearninfotech.com
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Phone -->
+                <div class="contact-info-item">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+
+                    <div>
+                        <h5>Phone</h5>
+
+                        <p>
+                            +1 (123) 456-7890
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Support -->
+                <div class="contact-info-item">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-clock"></i>
+                    </div>
+
+                    <div>
+                        <h5>Support Hours</h5>
+
+                        <p>
+                            Monday – Friday<br>
+                            9:00 AM – 6:00 PM
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+
+            <div class="contact-form-card h-100">
+
+                <div class="mb-4">
+
+                    <h3 class="fw-bold">
+                        Send Us a Message
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        Fill out the form below and we'll get back to you.
+                    </p>
+
+                </div>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {% for i in form %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                {{ i.label }}
+                            </label>
+
+                            {{ i }}
+                            
+                            {% if i.errors %}
+                                <div class="text-danger small mt-1">
+                                    {% for error in i.errors %}
+                                        <div>
+                                            <i class="bi bi-exclamation-circle me-1"></i>
+                                            {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                        </div>
+
+                    {% endfor %}
+                    <button type="submit"
+                            class="btn btn-primary px-4 py-2 fw-semibold">
+
+                        <i class="bi bi-send me-1"></i>
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAP
+========================= -->
+<section class="container mb-5">
+
+    <div class="contact-map-card">
+
+        <div class="p-4">
+
+            <h3 class="fw-bold mb-1">
+                Find Us
+            </h3>
+
+            <p class="text-muted mb-0">
+                Visit our location or use the map below to find us.
+            </p>
+
+        </div>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3255782141014!2d78.38214187331936!3d17.44412430117183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91ed2dea4c17%3A0xd49a55db035ba737!2sElearn%20Infotech!5e0!3m2!1sen!2sin!4v1788523562566!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="container my-5">
+
+    <div class="contact-cta text-center p-5 rounded-4">
+
+        <i class="bi bi-chat-dots contact-cta-icon"></i>
+
+        <h2 class="fw-bold mt-3">
+            Need Help With Registration?
+        </h2>
+
+        <p class="mx-auto">
+            Explore our available classes or start your registration
+            today.
+        </p>
+
+        <a href="/started"
+           class="btn btn-warning px-4 py-2 fw-semibold">
+
+            <i class="bi bi-person-plus me-1"></i>
+            Register Now
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

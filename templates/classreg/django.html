@@ -1,0 +1,467 @@
+{% extends "classreg/navbar.html" %}
+{% load static %}
+
+{% block nav_block %}
+
+<!-- Django Hero -->
+<section class="course-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3">
+                    WEB DEVELOPMENT COURSE
+                </span>
+
+                <h1 class="display-4 fw-bold text-white">
+                    Django Classes
+                </h1>
+
+                <p class="lead text-white-50 mt-3">
+                    Learn Python web development and build secure,
+                    scalable web applications with Django.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="/started"
+                       class="btn btn-warning px-4 py-2 me-2">
+                        <i class="bi bi-person-plus me-1"></i>
+                        Register Now
+                    </a>
+
+                    <a href="#courseOverview"
+                       class="btn btn-outline-light px-4 py-2">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 text-center">
+
+                <div class="course-image-card">
+
+                    <img src="{% static 'images/django.png' %}"
+                         alt="Django Web Development"
+                         class="img-fluid rounded-4">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Course Overview -->
+<section class="container py-5" id="courseOverview">
+
+    <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+
+            <span class="text-primary fw-semibold">
+                COURSE OVERVIEW
+            </span>
+
+            <h2 class="fw-bold mt-2 mb-4">
+                Build Web Applications with Django
+            </h2>
+
+            <p class="text-muted">
+                Django is a high-level Python web framework designed
+                to help developers build secure and maintainable web
+                applications efficiently. It follows the
+                Model-Template-View architecture and encourages
+                reusable and organized code.
+            </p>
+
+            <p class="text-muted">
+                Our Django classes introduce students to web development
+                using Python, covering Django fundamentals, URL routing,
+                templates, models, forms, authentication, databases,
+                and practical application development.
+            </p>
+
+        </div>
+
+
+        <div class="col-lg-6">
+
+            <div class="course-info-box shadow-sm">
+
+                <h4 class="fw-bold mb-4">
+                    Course Highlights
+                </h4>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-window"></i>
+
+                    <div>
+
+                        <h6 class="fw-bold mb-1">
+                            Django Fundamentals
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Understand Django projects, applications,
+                            settings, URLs, views, and templates.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-database"></i>
+
+                    <div>
+
+                        <h6 class="fw-bold mb-1">
+                            Models & Databases
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Create models and work with databases
+                            using Django's ORM.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-ui-checks-grid"></i>
+
+                    <div>
+
+                        <h6 class="fw-bold mb-1">
+                            Forms & Authentication
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Build forms and implement user registration,
+                            login, and authentication features.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-laptop"></i>
+
+                    <div>
+
+                        <h6 class="fw-bold mb-1">
+                            Practical Projects
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Apply Django concepts by developing
+                            practical web applications.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- What You Will Learn -->
+<section class="bg-light py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-semibold">
+                CURRICULUM
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                What You'll Learn
+            </h2>
+
+            <p class="text-muted mx-auto section-description">
+                A structured learning path covering the essential
+                concepts required to build Django web applications.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- 01 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        01
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Django Fundamentals
+                    </h5>
+
+                    <p class="text-muted">
+                        Learn Django project structure, applications,
+                        settings, URLs, views, and templates.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        02
+                    </div>
+
+                    <h5 class="fw-bold">
+                        URLs & Views
+                    </h5>
+
+                    <p class="text-muted">
+                        Create URL patterns and views to control
+                        application behavior and page navigation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        03
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Templates & Bootstrap
+                    </h5>
+
+                    <p class="text-muted">
+                        Build dynamic web pages using Django templates,
+                        template inheritance, and Bootstrap.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        04
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Models & ORM
+                    </h5>
+
+                    <p class="text-muted">
+                        Create database models and interact with
+                        application data using Django ORM.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        05
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Forms & Authentication
+                    </h5>
+
+                    <p class="text-muted">
+                        Work with Django forms and implement
+                        authentication and user management.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        06
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Practical Applications
+                    </h5>
+
+                    <p class="text-muted">
+                        Combine Django concepts to build complete
+                        database-driven web applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Classroom Gallery -->
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <span class="text-primary fw-semibold">
+            LEARNING ENVIRONMENT
+        </span>
+
+        <h2 class="fw-bold mt-2">
+            Our Classroom
+        </h2>
+
+        <p class="text-muted">
+            Take a look at our learning environment.
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom1.jpg' %}"
+                     alt="Python classroom"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom2.jpg' %}"
+                     alt="Python training"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom3.jpg' %}"
+                     alt="Python programming class"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom4.jpg' %}"
+                     alt="Python learning session"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Career CTA -->
+<section class="container my-5">
+
+    <div class="course-cta text-center p-5 rounded-4">
+
+        <div class="cta-icon mb-3">
+
+            <i class="bi bi-briefcase-fill"></i>
+
+        </div>
+
+        <h2 class="fw-bold">
+            Ready to Start Learning Django?
+        </h2>
+
+        <p class="text-muted mx-auto mt-3">
+            Learn Python-based web development, build database-driven
+            applications, and develop practical skills for modern
+            web development.
+        </p>
+
+        <a href="/started"
+           class="btn btn-primary px-4 py-2 mt-2">
+
+            <i class="bi bi-arrow-right-circle me-2"></i>
+            Register for Django Classes
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

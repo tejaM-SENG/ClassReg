@@ -1,0 +1,355 @@
+{% extends 'classreg/navbar.html' %}
+
+{% block nav_block %}
+
+
+<div class="edit-student-page">
+    <div class="edit-student-container">
+
+        <a href="{% url 'dashboard' %}" class="edit-breadcrumb">
+            <i class="bi bi-arrow-left"></i>
+            Back to Dashboard
+        </a>
+
+        <div class="edit-header">
+            <h1>Edit Student</h1>
+            <p>Update the student's information and account status.</p>
+        </div>
+
+
+        <div class="edit-card">
+
+            <div class="edit-card-header">
+                <h2>
+                    <i class="bi bi-person-vcard me-2"></i>
+                    Student Information
+                </h2>
+                <p>
+                    Student ID: {{ student.Student_ID }}
+                </p>
+            </div>
+
+            <form method="POST"
+                  action="{% url 'Sedit' student.id %}"
+                  class="student-form">
+
+                {% csrf_token %}
+
+                <div class="edit-card-body">
+
+                    <h3 class="form-section-title">
+                        <i class="bi bi-person-lines-fill me-2"></i>
+                        Personal Details
+                    </h3>
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <label for="Student_ID" class="form-label">
+                                Student ID
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="Student_ID"
+                                   name="Student_ID"
+                                   value="{{ student.Student_ID }}"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Name" class="form-label">
+                                Full Name
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="Name"
+                                   name="Name"
+                                   value="{{ student.Name }}"
+                                   maxlength="150"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Date_of_Birth" class="form-label">
+                                Date of Birth
+                            </label>
+                            <input type="date"
+                                   class="form-control"
+                                   id="Date_of_Birth"
+                                   name="Date_of_Birth"
+                                   value="{{ student.Date_of_Birth|date:'Y-m-d' }}"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Gender" class="form-label">
+                                Gender
+                            </label>
+                            <select class="form-select"
+                                    id="Gender"
+                                    name="Gender"
+                                    required>
+                                <option value="">Select gender</option>
+                                <option value="Male"
+                                    {% if student.Gender == "Male" %}selected{% endif %}>
+                                    Male
+                                </option>
+                                <option value="Female"
+                                    {% if student.Gender == "Female" %}selected{% endif %}>
+                                    Female
+                                </option>
+                                <option value="Other"
+                                    {% if student.Gender == "Other" %}selected{% endif %}>
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title mt-5">
+                        <i class="bi bi-telephone me-2"></i>
+                        Contact Details
+                    </h3>
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <label for="Email" class="form-label">
+                                Email Address
+                            </label>
+                            <input type="email"
+                                   class="form-control"
+                                   id="Email"
+                                   name="Email"
+                                   value="{{ student.Email }}"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Phone" class="form-label">
+                                Phone Number
+                            </label>
+                            <input type="tel"
+                                   class="form-control"
+                                   id="Phone"
+                                   name="Phone"
+                                   value="{{ student.Phone }}"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title mt-5">
+                        <i class="bi bi-gear me-2"></i>
+                        Registration Details
+                    </h3>
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <label for="Date_Registered" class="form-label">
+                                Date Registered
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="Date_Registered"
+                                   value="{{ student.Date_Registered|date:'d M Y' }}"
+                                   readonly>
+                            <span class="field-help">
+                                The original registration date is read-only.
+                            </span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="active-status-box h-100">
+                                <div>
+                                    <strong>Student Account Status</strong>
+                                    <small>Enable or deactivate this student.</small>
+                                </div>
+
+                                <div class="form-check form-switch mb-0">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           role="switch"
+                                           id="Is_Active"
+                                           name="Is_Active"
+                                           value="True"
+                                           {% if student.Is_Active %}checked{% endif %}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-card-footer">
+                    <a href="{% url 'dashboard' %}"
+                       class="edit-btn edit-btn-cancel">
+                        <i class="bi bi-x-circle"></i>
+                        Cancel
+                    </a>
+                    <button type="submit" class="edit-btn edit-btn-save">
+                        <i class="bi bi-check-circle"></i>
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Registered Classes -->
+        <div class="edit-card mt-4">
+
+            <div class="edit-card-header">
+                <h2>
+                    <i class="bi bi-journal-bookmark me-2"></i>
+                    Registered Classes
+                </h2>
+                <p>
+                    View all class enrollment requests for {{ student.Name }}.
+                </p>
+            </div>
+
+            <div class="edit-card-body">
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border bg-light">
+                            <div class="text-muted small">Enrolled</div>
+                            <h3 class="mb-0 text-warning">
+                                {{ enrollments.count }}
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border bg-light">
+                            <div class="text-muted small">Student</div>
+                            <h3 class="mb-0">{{ student.Name }}</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border bg-light">
+                            <div class="text-muted small">Student ID</div>
+                            <h3 class="mb-0">{{ student.Student_ID }}</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Course</th>
+                                <th>Price</th>
+                                <th>Requested On</th>
+                                <th>Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for enrollment in enrollments %}
+                            <tr>
+                                <td class="fw-semibold">
+                                    {{ enrollment.registered_class.name }}
+                                </td>
+
+                                <td>
+                                    {{ enrollment.registered_class.course }}
+                                </td>
+
+                                <td class="fw-semibold">
+                                    ₹{{ enrollment.registered_class.price|floatformat:2 }}
+                                </td>
+
+                                <td>
+                                    {{ enrollment.registered_on|date:"d M Y" }}
+                                </td>
+
+                                <td>
+                                    {% if enrollment.status == "Approved" %}
+                                        <span class="badge bg-success rounded-pill px-3 py-2">
+                                            <i class="bi bi-check-circle me-1"></i>
+                                            Approved
+                                        </span>
+
+                                    {% elif enrollment.status == "Pending" %}
+                                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2">
+                                            <i class="bi bi-clock me-1"></i>
+                                            Pending
+                                        </span>
+
+                                    {% elif enrollment.status == "Rejected" %}
+                                        <span class="badge bg-danger rounded-pill px-3 py-2">
+                                            <i class="bi bi-x-circle me-1"></i>
+                                            Rejected
+                                        </span>
+
+                                    {% else %}
+                                        <span class="badge bg-secondary rounded-pill px-3 py-2">
+                                            {{ enrollment.status }}
+                                        </span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+
+                                        {% if enrollment.status == "Pending" %}
+                                        <form method="POST"
+                                            action="{% url 'update_enrollment_status' enrollment.id %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="status" value="Approved">
+
+                                            <button type="submit"
+                                                    class="btn btn-sm btn-success"
+                                                    onclick="return confirm('Approve this enrollment?');">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Approve
+                                            </button>
+                                        </form>
+                                        <form method="POST"
+                                            action="{% url 'update_enrollment_status' enrollment.id %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="status" value="Rejected">
+
+                                            <button type="submit"
+                                                    class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Reject this enrollment?');">
+                                                <i class="bi bi-x-circle me-1"></i>
+                                                Reject
+                                            </button>
+                                        </form>
+                                        {%else%}
+                                        <p class='mt-2'>No action required</p>
+
+                                        {% endif %}
+                                    </div>
+                                </td>
+                            </tr>
+
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center py-5">
+                                    <i class="bi bi-journal-x fs-2 text-muted"></i>
+                                    <p class="mt-2 mb-1 fw-semibold">
+                                        No registered classes found
+                                    </p>
+                                    <p class="text-muted small mb-0">
+                                        This student has not requested enrollment in any classes.
+                                    </p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

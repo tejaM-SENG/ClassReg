@@ -1,0 +1,142 @@
+{% extends 'classreg/navbar.html' %}
+{% load static %}
+
+{% block nav_block %}
+
+<section class="auth-page student-registration-page">
+    <div class="container-fluid">
+
+        <div class="registration-card">
+
+            <!-- Left image panel -->
+            <div class="registration-visual">
+                <img
+                    src="{% static 'images/student.jpg' %}"
+                    alt="Students learning together"
+                >
+
+                <div class="registration-visual-content">
+                    <span class="registration-badge">
+                        WELCOME TO CLASSHUB
+                    </span>
+
+                    <h2>Your Learning Journey Starts Here.</h2>
+
+                    <p>
+                        Create your student account to stay connected
+                        with your classes, manage your information,
+                        and take the next step in your education.
+                    </p>
+
+                    <div class="registration-benefit">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Easy student registration</span>
+                    </div>
+
+                    <div class="registration-benefit">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Manage your learning details</span>
+                    </div>
+
+                    <div class="registration-benefit">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Stay connected with ClassHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right form panel -->
+            <div class="registration-form-side">
+                <div class="registration-form-content">
+
+                    <div class="auth-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+
+                    <div class="text-center registration-heading">
+                        <h1>Student Registration</h1>
+                        <p>
+                            Enter your details to create your account.
+                        </p>
+                    </div>
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        {% for i in form %}
+                            <div class="registration-field">
+
+                                <label for="{{ i.id_for_label }}"
+                                       class="form-label mt-2">
+                                    {{ i.label }}
+                                </label>
+
+                                {{ i }}
+
+                                {% if i.name == 'password' %}
+                                    <div class="password-requirements mt-2">
+                                        <p class="fw-semibold mb-2">Password requirements</p>
+                                        <ul class="mb-0">
+                                            <li>Your password can't be too similar to your other personal information.</li>
+                                            <li>Your password must contain at least 8 characters.</li>
+                                            <li>Your password can't be a commonly used password.</li>
+                                            <li>Your password can't be entirely numeric.</li>
+                                        </ul>
+                                    </div>
+                                {% endif %}
+
+                                {% if i.help_text %}
+                                    <div class="form-text">
+                                        {{ i.help_text }}
+                                    </div>
+                                {% endif %}
+
+                                {% if i.errors %}
+                                    <div class="text-danger small mt-2">
+                                        {{ i.errors }}
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        {% endfor %}
+
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {{ form.non_field_errors }}
+                            </div>
+                        {% endif %}
+
+                        <button type="submit"
+                                class="btn btn-primary registration-submit w-100 mt-3">
+                            <i class="bi bi-person-plus me-2"></i>
+                            Register as Student
+                        </button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="registration-footer text-center">
+                        <p>
+                            Already have a student account?
+                            <a href="/login/" class="auth-link">Login</a>
+                        </p>
+
+                        <p class="mb-0">
+                            Looking for parent registration?
+                            <a href="/parent_reg" class="auth-link">
+                                Register as Parent
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

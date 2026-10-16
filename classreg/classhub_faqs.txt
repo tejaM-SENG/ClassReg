@@ -1,0 +1,89 @@
+Q: How do I register?
+A: Open the ClassHub homepage and select Register. Create your account, log in, and open the available classes page to select a class. Follow the on-screen instructions to complete registration.
+
+Q: How do I create a ClassHub account?
+A: Open the ClassHub website and select Register. Enter the required information and submit the registration form.
+
+Q: What information is required to register?
+A: Complete all required fields in the registration form. Check that your information is correct before submitting it.
+
+Q: Can parents register on ClassHub?
+A: Please check the registration options available on the ClassHub website. If you cannot find a suitable parent registration option, contact the administrator.
+
+Q: How do I log in to ClassHub?
+A: Open the ClassHub website and select Login. Enter your registered username or email and password.
+
+Q: I cannot log in to my account. What should I do?
+A: Check that your login credentials are correct and try again. If the problem continues, contact the ClassHub administrator.
+
+Q: I forgot my password. How can I recover it?
+A: Check whether the login page provides a password reset option. If you cannot reset your password, contact the ClassHub administrator.
+
+Q: How do I log out of ClassHub?
+A: Log in to your account and select the Logout option. This helps protect your account when you finish using the website.
+
+Q: How do I view available classes?
+A: Log in to ClassHub and open the available classes page to view the classes listed there.
+
+Q: How do I find a particular class?
+A: Open the available classes page and look for the class you want. If a search or filter option is available, use it to narrow the results.
+
+Q: How do I view class details?
+A: Open the available classes page and select the class you want to learn about. Review the displayed information before registering.
+
+Q: How do I enroll in a class?
+A: Log in to ClassHub, open the available classes page, and select your preferred class. Follow the available enrollment instructions to complete the process.
+
+Q: How do I know if my enrollment was successful?
+A: Check for a confirmation message or look for the class in your registered classes section, if available. Contact the administrator if you cannot confirm your enrollment.
+
+Q: Can I register for more than one class?
+A: This depends on ClassHub's enrollment rules and class availability. Check the website or contact the administrator to confirm whether multiple enrollments are allowed.
+
+Q: Can I register for a class that is full?
+A: Enrollment in a full class depends on ClassHub's capacity and waitlist policies. Contact the administrator to ask about available options.
+
+Q: Why can't I find a class on the available classes page?
+A: The class may not currently be listed or available for enrollment. Contact the administrator if you believe the class should be available.
+
+Q: How can I check a class schedule?
+A: Open the class details page and review the schedule information, if provided. Contact the administrator if the schedule is missing or unclear.
+
+Q: How can I find the instructor for a class?
+A: Open the class details and look for the instructor information. If no instructor is listed, contact the administrator.
+
+Q: Where can I find class descriptions?
+A: Open the available classes page and select a class to review its description, if provided. Contact the administrator if you need additional information.
+
+Q: What are the class registration deadlines?
+A: Registration deadlines depend on the specific class and its enrollment rules. Check the class information or contact the administrator for the confirmed deadline.
+
+Q: Are there any registration fees?
+A: Fees depend on ClassHub's actual fee policies and the class you choose. Review the official class information or contact the administrator before making a payment.
+
+Q: How can I make a class payment?
+A: Check the official ClassHub website for its supported payment instructions, if applicable. Contact the administrator if payment details are unavailable.
+
+Q: How can I confirm whether my payment was received?
+A: Check for a payment confirmation or receipt if the website provides one. If you cannot confirm your payment, contact the administrator.
+
+Q: What should I do if a payment fails?
+A: Check your payment status before trying again to avoid an accidental duplicate payment. Contact the administrator or your payment provider if the issue continues.
+
+Q: Can I cancel my class registration?
+A: Cancellation depends on ClassHub's enrollment and cancellation policies. Contact the administrator to confirm the available options.
+
+Q: Can I change my registered class?
+A: Class changes depend on availability and ClassHub's enrollment policies. Contact the administrator to ask whether you can switch classes.
+
+Q: How do I update my account information?
+A: Check your account profile for an option to edit your personal information. If the information cannot be changed, contact the administrator.
+
+Q: How do I contact the ClassHub administrator?
+A: Contact the ClassHub administrator using the official contact details published on the website. If those details are unavailable, check the site's support or contact page.
+
+Q: What should I do if the ClassHub website is not working?
+A: Refresh the page and check your internet connection, then try again. If the issue continues, contact the administrator and describe the problem.
+
+Q: How can I report an error on ClassHub?
+A: Contact the ClassHub administrator and explain what happened. Include the page you were using and any error message you received.

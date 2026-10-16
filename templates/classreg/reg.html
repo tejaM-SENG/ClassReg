@@ -1,0 +1,124 @@
+{% extends 'classreg/navbar.html' %}
+
+{% block nav_block %}
+
+<section class="registration-options-page">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="registration-badge">
+                <i class="bi bi-mortarboard me-1"></i>
+                CLASSHUB REGISTRATION
+            </span>
+
+            <h1 class="fw-bold mt-3">Join ClassHub</h1>
+
+            <p class="text-muted mx-auto registration-description">
+                Choose your registration type to get started.
+                Students can register for learning, while parents can
+                submit their details and student information.
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- Student Registration -->
+            <div class="col-md-6 col-lg-5">
+
+                <div class="registration-option-card">
+
+                    <div class="registration-option-icon student-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+
+                    <h3 class="fw-bold">Student Registration</h3>
+
+                    <p class="text-muted">
+                        Create a student account to get started with
+                        your learning journey and explore available courses.
+                    </p>
+
+                    <ul class="registration-benefits">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Register your student details
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Explore learning opportunities
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Get started with ClassHub
+                        </li>
+                    </ul>
+
+                    <a href="/student_reg/"
+                       class="btn btn-primary w-100 py-2 fw-semibold">
+                        <i class="bi bi-person-plus me-2"></i>
+                        Register as Student
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Parent Registration -->
+            <div class="col-md-6 col-lg-5">
+
+                <div class="registration-option-card">
+
+                    <div class="registration-option-icon parent-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h3 class="fw-bold">Parent Registration</h3>
+
+                    <p class="text-muted">
+                        Submit your contact details and information
+                        about your child through the parent registration form.
+                    </p>
+
+                    <ul class="registration-benefits">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Enter parent contact information
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Provide your student's name
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Send a message or inquiry
+                        </li>
+                    </ul>
+
+                    <a href="/parent_reg/"
+                       class="btn btn-outline-primary w-100 py-2 fw-semibold">
+                        <i class="bi bi-person-lines-fill me-2"></i>
+                        Register as Parent
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <p class="text-muted">
+                Already registered?
+                <a href="/login/" class="auth-link">Login to your account</a>
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

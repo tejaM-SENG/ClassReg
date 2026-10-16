@@ -1,0 +1,409 @@
+{% extends 'classreg/navbar.html' %}
+
+{% block nav_block %}
+
+<section class="py-5 bg-light min-vh-100">
+    <div class="container">
+
+        <!-- Welcome -->
+        <div class="bg-dark text-white rounded-4 p-4 p-md-5 mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <span class="badge bg-primary mb-3">
+                        Student Dashboard
+                    </span>
+
+                    <h1 class="fw-bold">
+                        Welcome, {{ student.Name }}!
+                    </h1>
+
+                    <p class="text-white-50 mb-0">
+                        View your profile, enrolled classes, and enrollment progress.
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <i class="bi bi-mortarboard display-1 text-primary"></i>
+                    <a href="{% url 'student_edit_profile' %}"
+                class="btn btn-light">
+                    <i class="bi bi-person-gear me-2"></i>
+                    Edit Profile
+                </a>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <!-- Student Information -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body p-4">
+                        <div class="text-primary mb-3">
+                            <i class="bi bi-person-badge fs-2"></i>
+                        </div>
+                        <p class="text-muted mb-1">Student ID</p>
+                        <h5 class="fw-bold mb-0">
+                            {{ student.Student_ID }}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-book fs-2"></i>
+                        </div>
+                        <p class="text-muted mb-1">Total Enrollments</p>
+                        <h3 class="fw-bold mb-0">
+                            {{ total_classes }}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="text-warning mb-3">
+                            <i class="bi bi-hourglass-split fs-2"></i>
+                        </div>
+                        <p class="text-muted mb-1">Pending</p>
+                        <h3 class="fw-bold mb-0">
+                            {{ pending_classes }}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle fs-2"></i>
+                        </div>
+                        <p class="text-muted mb-1">Approved</p>
+                        <h3 class="fw-bold mb-0">
+                            {{ approved_classes }}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Available Classes -->
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-body p-4 p-md-5">
+
+                <div class="d-flex flex-wrap justify-content-between
+                            align-items-center gap-2 mb-4">
+                    <div>
+                        <h4 class="fw-bold mb-1">
+                            <i class="bi bi-book-half text-primary me-2"></i>
+                            Explore Classes
+                        </h4>
+                        <p class="text-muted mb-0">
+                            Find a class that matches your learning goals.
+                        </p>
+                    </div>
+
+                    <span class="badge bg-primary rounded-pill px-3 py-2">
+                        {{ available_classes|length }} Available
+                    </span>
+                </div>
+
+                {% if available_classes %}
+                    <div class="row g-4">
+                        {% for class_item in available_classes %}
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card h-100 border shadow-sm rounded-4
+                                            overflow-hidden class-card">
+
+                                    <div class="card-body p-4 d-flex flex-column">
+
+                                        <div class="d-flex justify-content-between
+                                                    align-items-start gap-2 mb-3">
+                                            <span class="badge bg-primary-subtle
+                                                        text-primary">
+                                                {{ class_item.course }}
+                                            </span>
+
+                                            <i class="bi bi-mortarboard fs-3
+                                                    text-primary"></i>
+                                        </div>
+
+                                        <h5 class="fw-bold text-white mb-2">
+                                            {{ class_item.name }}
+                                        </h5>
+
+                                        <p class="small mb-3">
+                                            {{ class_item.description|default:"Explore this class to develop your skills and knowledge."|truncatewords:25 }}
+                                        </p>
+
+                                        {% if class_item.instructor %}
+                                            <p class="small mb-2">
+                                                <i class="bi bi-person me-2
+                                                        text-primary"></i>
+                                                {{ class_item.instructor }}
+                                            </p>
+                                        {% endif %}
+
+                                        <p class="small mb-3">
+                                            <i class="bi bi-calendar3 me-2
+                                                    text-primary"></i>
+                                            {{ class_item.schedule|default:"Schedule to be announced" }}
+                                        </p>
+
+                                        <div class="border-top pt-3 mt-auto">
+                                            <div class="d-flex justify-content-between
+                                                        align-items-center mb-3">
+                                                <span class="text-muted small">
+                                                    Class price
+                                                </span>
+                                                <span class="fs-5 fw-bold text-success">
+                                                    ₹{{ class_item.price|floatformat:2 }}
+                                                </span>
+                                            </div>
+
+                                            <div class="mt-auto">
+
+                                                {% if class_item.enrollment_status == "Approved" %}
+
+                                                    <button type="button"
+                                                            class="btn btn-success w-100 rounded-3"
+                                                            disabled>
+                                                        <i class="bi bi-check-circle me-2"></i>
+                                                        Enrolled
+                                                    </button>
+
+                                                {% elif class_item.enrollment_status == "Pending" %}
+
+                                                    <button type="button"
+                                                            class="btn btn-warning w-100 rounded-3"
+                                                            disabled>
+                                                        <i class="bi bi-hourglass-split me-2"></i>
+                                                        Pending Decision
+                                                    </button>
+
+                                                {% elif class_item.enrollment_status == "Rejected" %}
+
+                                                    <form method="post"
+                                                        action="{% url 'request_enrollment' class_item.pk %}">
+                                                        {% csrf_token %}
+
+                                                        <button type="submit"
+                                                                class="btn btn-outline-danger w-100 rounded-3">
+                                                            <i class="bi bi-arrow-repeat me-2"></i>
+                                                            Rejected — Try Again
+                                                        </button>
+                                                    </form>
+
+                                                {% else %}
+
+                                                    <form method="post"
+                                                        action="{% url 'request_enrollment' class_item.pk %}">
+                                                        {% csrf_token %}
+
+                                                        <button type="submit"
+                                                                class="btn btn-primary w-100 rounded-3">
+                                                            <i class="bi bi-send me-2"></i>
+                                                            Enroll Request
+                                                        </button>
+                                                    </form>
+
+                                                {% endif %}
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="bi bi-journal-check display-4 text-muted"></i>
+                        <h5 class="fw-bold mt-3">You're All Caught Up!</h5>
+                        <p class="text-muted mb-0">
+                            No new classes are available to request right now.
+                        </p>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+
+
+        <!-- Profile and Classes -->
+        <div class="row g-4 align-items-stretch dashboard-bottom-row">
+
+            <!-- My Profile -->
+            <div class="col-lg-4 dashboard-profile-column">
+                <div class="card dashboard-equal-card border-0 shadow-lg rounded-4">
+
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-4">
+                            <i class="bi bi-person-circle text-primary me-2"></i>
+                            My Profile
+                        </h4>
+
+                        <p class="text-muted mb-1">Full Name</p>
+                        <p class="fw-semibold">
+                            {{ student.Name }}
+                        </p>
+
+                        <p class="text-muted mb-1">Email</p>
+                        <p class="fw-semibold">
+                            {{ student.Email|default:"Not provided" }}
+                        </p>
+
+                        <p class="text-muted mb-1">Phone</p>
+                        <p class="fw-semibold">
+                            {{ student.Phone|default:"Not provided" }}
+                        </p>
+
+                        <p class="text-muted mb-1">Date of Birth</p>
+                        <p class="fw-semibold">
+                            {{ student.Date_of_Birth|date:"d M Y"|default:"Not provided" }}
+                        </p>
+
+                        <p class="text-muted mb-1">Registration Date</p>
+                        <p class="fw-semibold mb-0">
+                            {{ student.Date_Registered|date:"d M Y"|default:"Not provided" }}
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- My Classes -->
+            <div class="col-lg-8 dashboard-table-column">
+                <div class="card w-100 h-100 dashboard-equal-card border-0 shadow-lg rounded-4">
+
+                    <div class="card-body p-4 d-flex flex-column">
+
+                        <!-- Table heading -->
+                        <div class="d-flex flex-wrap justify-content-between
+                                    align-items-center gap-2 mb-4">
+
+                            <h4 class="fw-bold mb-0">
+                                <i class="bi bi-journal-bookmark text-primary me-2"></i>
+                                My Classes
+                            </h4>
+
+                            <span class="badge bg-primary rounded-pill px-3 py-2">
+                                {{ total_classes }} total
+                            </span>
+
+                        </div>
+
+                        {% if enrollments %}
+
+                            <div class="table-responsive dashboard-enrollments-table">
+                                <table class="table admin-table align-middle">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>Course</th>
+                                            <th>Schedule</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {% for enrollment in enrollments %}
+                                            <tr>
+                                                <td class="fw-semibold">
+                                                    {{ enrollment.registered_class.name }}
+                                                </td>
+
+                                                <td>
+                                                    {{ enrollment.registered_class.course }}
+                                                </td>
+
+                                                <td>
+                                                    {{ enrollment.registered_class.schedule|default:"Not scheduled" }}
+                                                </td>
+
+                                                <td>
+                                                    {% if enrollment.status == 'Approved' %}
+                                                        <span class="badge bg-success">
+                                                            Approved
+                                                        </span>
+                                                    {% elif enrollment.status == 'Pending' %}
+                                                        <span class="badge bg-warning text-dark">
+                                                            Pending
+                                                        </span>
+                                                    {% else %}
+                                                        <span class="badge bg-danger">
+                                                            Rejected
+                                                        </span>
+                                                    {% endif %}
+                                                </td>
+
+                                                <td>
+                                                    {% if enrollment.status == 'Pending' or enrollment.status == 'Rejected' %}
+                                                        <form method="post"
+                                                            action="{% url 'delete_enrollment' enrollment.pk %}"
+                                                            onsubmit="return confirm('Are you sure you want to delete this enrollment request?');">
+
+                                                            {% csrf_token %}
+
+                                                            <button type="submit"
+                                                                    class="btn btn-outline-danger btn-sm rounded-3">
+                                                                <span class='d-flex gap-1'><i class="bi bi-trash me-1"></i> Delete </span>                                                            
+                                                            </button>
+
+                                                        </form>
+                                                    {% else %}
+                                                        <span class="text-muted small">
+                                                            Not Applicable
+                                                        </span>
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                        {% empty %}
+                                            <tr>
+                                                <td colspan="5"
+                                                    class="text-center py-4 text-muted">
+                                                    You have not requested enrollment in any classes yet.
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        {% else %}
+
+                            <div class="text-center py-5 dashboard-empty-state">
+                                <i class="bi bi-journal-x display-4 text-muted"></i>
+                                <h5 class="fw-bold mt-3">No Classes Yet</h5>
+                                <p class="text-muted mb-0">
+                                    Your enrollments will appear here when available.
+                                </p>
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+

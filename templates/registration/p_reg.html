@@ -1,0 +1,311 @@
+{% extends 'classreg/navbar.html' %}
+{% load static %}
+{% block nav_block %}
+
+<section class="auth-page">
+
+    <div class="container-fluid">
+
+<div class="registration-card">
+
+    <!-- Left image -->
+    <div class="registration-visual">
+        <img
+            src="{% static 'images/parent.jpg' %}"
+            alt="Parent supporting a student's education"
+        >
+
+        <div class="registration-visual-content">
+            <h2>Be Part of Their Success.</h2>
+            <p>
+                Stay connected with your child's classes,
+                support their learning journey, and keep
+                important school information within reach.
+            </p>
+        </div>
+    </div>
+
+    <!-- Right form -->
+    <div class="registration-form-side">
+        <div class="registration-form-content">
+
+                <div class="auth-card">
+
+                    <!-- Icon -->
+                    <div class="auth-icon">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+
+
+                    <!-- Heading -->
+                    <div class="text-center mb-4">
+
+                        <h1 class="fw-bold">
+                            Parent Registration
+                        </h1>
+
+                        <p class="text-muted mb-0">
+                            Register as a parent to access ClassHub.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Registration Form -->
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+
+                        
+                        {% for field in form %}
+                            <div class="mb-3">
+
+                                {% if field.name == 'students' %}
+
+                                    <label class="form-label fw-semibold">
+                                        Select Student(s)
+                                    </label>
+
+                                    <div class="position-relative">
+                                        <input type="text"
+                                            id="studentSearch"
+                                            class="form-control"
+                                            placeholder="Start typing a student name or ID..."
+                                            autocomplete="off">
+
+                                        <div id="studentResults"
+                                            class="list-group position-absolute w-100 shadow-sm"
+                                            style="z-index: 1000; max-height: 200px;
+                                                    overflow-y: auto; display: none;">
+
+                                            {% for checkbox in field %}
+                                                <label class="list-group-item student-option"
+                                                    data-search="{{ checkbox.choice_label|lower }}"
+                                                    style="display: none; cursor: pointer;">
+                                                    {{ checkbox.tag }}
+                                                    {{ checkbox.choice_label }}
+                                                </label>
+                                            {% endfor %}
+
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label class="form-label fw-semibold">
+                                            Selected Students
+                                        </label>
+
+                                        <div id="selectedStudents" class="border rounded p-3">
+                                            <span class="text-muted small" id="emptySelection">
+                                                No students selected.
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                {% else %}
+
+                                    <label for="{{ field.id_for_label }}"
+                                        class="form-label fw-semibold">
+                                        {{ field.label }}
+                                    </label>
+
+                                    {{ field }}
+
+                                    {% if field.name == 'password' %}
+                                        <div class="password-requirements mt-2">
+                                            <p class="fw-semibold mb-2">Password requirements</p>
+                                            <ul class="mb-0">
+                                                <li>Your password can't be too similar to your other personal information.</li>
+                                                <li>Your password must contain at least 8 characters.</li>
+                                                <li>Your password can't be a commonly used password.</li>
+                                                <li>Your password can't be entirely numeric.</li>
+                                            </ul>
+                                        </div>
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if field.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ field.errors }}
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        {% endfor %}
+
+
+
+
+                        <!-- Register Button -->
+                        <button type="submit"
+                                class="btn btn-primary w-100 py-2 mt-2 fw-semibold">
+
+                            <i class="bi bi-person-plus me-1"></i>
+                            Create Account
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+
+                    <!-- Login -->
+                    <div class="text-center">
+
+                        <p class="text-muted mb-0">
+                            Already have an account?
+                            <a href="/login" class="auth-link">
+                                Login here
+                            </a>
+                        </p>
+                        
+
+                        <p class="text-muted mt-2 mb-0">
+                            Looking for student registration?
+                            <a href="/student_reg" class="auth-link">
+                                Register as Student
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const search = document.getElementById('studentSearch');
+    const results = document.getElementById('studentResults');
+    const selected = document.getElementById('selectedStudents');
+    const options = document.querySelectorAll('.student-option');
+
+    if (!search || !results || !selected) return;
+
+    function updateEmptyMessage() {
+        const hasSelected = selected.querySelector('.student-tag');
+        let emptyMessage = document.getElementById('emptySelection');
+
+        if (!hasSelected && !emptyMessage) {
+            emptyMessage = document.createElement('span');
+            emptyMessage.id = 'emptySelection';
+            emptyMessage.className = 'text-muted small';
+            emptyMessage.textContent = 'No students selected.';
+            selected.appendChild(emptyMessage);
+        } else if (hasSelected && emptyMessage) {
+            emptyMessage.remove();
+        }
+    }
+
+    function addStudentTag(option, checkbox) {
+        // Prevent duplicate tags.
+        const existingTags = selected.querySelectorAll('.student-tag');
+
+        for (const tag of existingTags) {
+            if (tag.dataset.studentId === checkbox.value) {
+                return;
+            }
+        }
+
+        const originalLabel = option.textContent.trim();
+
+        const tag = document.createElement('span');
+        tag.className =
+            'badge text-bg-primary me-2 mb-2 p-2 student-tag';
+        tag.dataset.studentId = checkbox.value;
+
+        const name = document.createElement('span');
+        name.textContent = originalLabel;
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'btn-close btn-close-white ms-2';
+        remove.style.fontSize = '9px';
+        remove.setAttribute('aria-label', 'Remove ' + originalLabel);
+
+        remove.addEventListener('click', function () {
+            checkbox.checked = false;
+            tag.remove();
+
+            updateEmptyMessage();
+            updateResults();
+        });
+
+        tag.appendChild(name);
+        tag.appendChild(remove);
+        selected.appendChild(tag);
+    }
+
+    function updateResults() {
+        const query = search.value.trim().toLowerCase();
+        let count = 0;
+
+        options.forEach(option => {
+            const checkbox = option.querySelector('input');
+
+            const matches =
+                query !== '' &&
+                option.dataset.search.includes(query) &&
+                !checkbox.checked;
+
+            option.style.display = matches ? 'block' : 'none';
+
+            if (matches) count++;
+        });
+
+        results.style.display = count > 0 ? 'block' : 'none';
+    }
+
+    search.addEventListener('input', updateResults);
+
+    options.forEach(option => {
+        const checkbox = option.querySelector('input');
+
+        // Restore previously selected students after a failed POST.
+        if (checkbox.checked) {
+            addStudentTag(option, checkbox);
+        }
+
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                addStudentTag(option, checkbox);
+                search.value = '';
+                results.style.display = 'none';
+            } else {
+                selected.querySelectorAll('.student-tag').forEach(tag => {
+                    if (tag.dataset.studentId === checkbox.value) {
+                        tag.remove();
+                    }
+                });
+            }
+
+            updateEmptyMessage();
+            updateResults();
+        });
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!results.contains(event.target) && event.target !== search) {
+            results.style.display = 'none';
+        }
+    });
+
+    updateEmptyMessage();
+});
+</script>
+
+
+{% endblock %}

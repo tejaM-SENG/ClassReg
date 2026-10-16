@@ -1,0 +1,993 @@
+{% extends "classreg/navbar.html" %}
+{% load static %}
+
+{% block nav_block %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero-section">
+
+ 
+<div class="container">
+
+    <div class="row align-items-center min-vh-75">
+
+        <!-- Hero Text -->
+        <div class="col-lg-6">
+
+            <span class="hero-badge">
+                <i class="bi bi-stars me-2"></i>
+                Learn • Register • Grow
+            </span>
+
+            <h1 class="hero-title mt-4">
+                Plan Your Learning.
+                <span>Build Your Future.</span>
+            </h1>
+
+            <p class="hero-description mt-4">
+                Explore courses, discover new skills and manage your
+                class registrations through one simple and convenient
+                learning platform.
+            </p>
+
+            <div class="hero-buttons mt-4">
+
+                <a href="/started" class="btn btn-primary btn-lg me-2">
+                    Register Now
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+
+                <a href="#courses" class="btn btn-outline-light btn-lg">
+                    Explore Classes
+                </a>
+
+            </div>
+
+            <!-- Small Stats -->
+            <div class="row mt-5">
+
+                <div class="col-4">
+                    <h3 class="fw-bold text-white mb-0">10+</h3>
+                    <small class="text-white">Courses</small>
+                </div>
+
+                <div class="col-4">
+                    <h3 class="fw-bold text-white mb-0">500+</h3>
+                    <small class="text-white">Students</small>
+                </div>
+
+                <div class="col-4">
+                    <h3 class="fw-bold text-white mb-0">24/7</h3>
+                    <small class="text-white">Access</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero Image -->
+        <div class="col-lg-6 mt-5 mt-lg-0">
+
+            <div class="hero-image-wrapper">
+
+                <img
+                    src="{% static 'images/home1.jpg' %}"
+                    alt="Students learning"
+                    class="hero-image"
+                >
+
+                <div class="floating-card floating-card-one">
+
+                    <div class="icon-circle">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+
+                    <div>
+                        <strong>Easy Registration</strong>
+                        <small>Quick & simple</small>
+                    </div>
+
+                </div>
+
+                <div class="floating-card floating-card-two">
+
+                    <i class="bi bi-mortarboard-fill"></i>
+
+                    <div>
+                        <strong>Learn More</strong>
+                        <small>Build your skills</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features-section">
+
+ 
+<div class="container">
+
+    <div class="text-center mb-5">
+
+        <span class="section-label">
+            WHY CLASSHUB?
+        </span>
+
+        <h2 class="section-title">
+            Everything You Need to Manage Your Classes
+        </h2>
+
+        <p class="section-description">
+            A centralized platform designed to make course discovery
+            and registration simple.
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- Feature 1 -->
+        <div class="col-lg-3 col-md-6">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+
+                <h4>Easy Registration</h4>
+
+                <p>
+                    Register for available classes through a simple
+                    and intuitive interface.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Feature 2 -->
+        <div class="col-lg-3 col-md-6">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="bi bi-book-half"></i>
+                </div>
+
+                <h4>Course Information</h4>
+
+                <p>
+                    Explore course details, schedules and available
+                    learning opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Feature 3 -->
+        <div class="col-lg-3 col-md-6">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                </div>
+
+                <h4>Centralized Dashboard</h4>
+
+                <p>
+                    Keep your class registrations and learning
+                    information organized in one place.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Feature 4 -->
+        <div class="col-lg-3 col-md-6">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="bi bi-phone-fill"></i>
+                </div>
+
+                <h4>Responsive Design</h4>
+
+                <p>
+                    Access the platform comfortably from desktops,
+                    tablets and mobile devices.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- ================= COURSES ================= -->
+
+<section class="courses-section" id="courses">
+
+ 
+<div class="container">
+
+    <div class="row align-items-end mb-5">
+
+        <div class="col-lg-8">
+
+            <span class="section-label">
+                EXPLORE COURSES
+            </span>
+
+            <h2 class="section-title">
+                Learn Skills That Matter
+            </h2>
+
+            <p class="section-description">
+                Explore our popular technology courses and take
+                the next step in your learning journey.
+            </p>
+
+        </div>
+
+        <div class="col-lg-4 text-lg-end">
+
+            <a href="/started" class="btn btn-outline-primary">
+                View All Classes
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- Python -->
+        <div class="col-lg-4 col-md-6">
+
+            <div class="course-card">
+
+                <img
+                    src="{% static 'images/hcard3.jpg' %}"
+                    alt="Python course"
+                >
+
+                <div class="course-body">
+
+                    <span class="course-tag">
+                        Programming
+                    </span>
+
+                    <h3>Python Development</h3>
+
+                    <p>
+                        Learn Python fundamentals and build a strong
+                        foundation for software development.
+                    </p>
+
+                    <a href="/python" class="course-link">
+                        Explore Course
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Java -->
+        <div class="col-lg-4 col-md-6">
+
+            <div class="course-card">
+
+                <img
+                    src="{% static 'images/hcard1.jpg' %}"
+                    alt="Java course"
+                >
+
+                <div class="course-body">
+
+                    <span class="course-tag">
+                        Programming
+                    </span>
+
+                    <h3>Java Programming</h3>
+
+                    <p>
+                        Develop programming skills with Java and
+                        understand object-oriented development.
+                    </p>
+
+                    <a href="/java" class="course-link">
+                        Explore Course
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Django -->
+        <div class="col-lg-4 col-md-6">
+
+            <div class="course-card">
+
+                <img
+                    src="{% static 'images/hcard2.jpg' %}"
+                    alt="Django course"
+                >
+
+                <div class="course-body">
+
+                    <span class="course-tag">
+                        Web Development
+                    </span>
+
+                    <h3>Django Development</h3>
+
+                    <p>
+                        Build dynamic web applications using Python
+                        and the Django framework.
+                    </p>
+
+                    <a href="/django" class="course-link">
+                        Explore Course
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="process-section">
+
+ 
+<div class="container">
+
+    <div class="text-center mb-5">
+
+        <span class="section-label">
+            SIMPLE PROCESS
+        </span>
+
+        <h2 class="section-title">
+            Start Learning in Three Steps
+        </h2>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="process-card">
+
+                <div class="badge text-bg-primary process-number">
+                    01
+                </div>
+
+                <i class="bi bi-search process-icon"></i>
+
+                <h4>Explore Classes</h4>
+
+                <p>
+                    Browse available courses and find the classes
+                    that match your interests.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="process-card">
+
+                <div class="badge text-bg-primary process-number">
+                    02
+                </div>
+
+                <i class="bi bi-person-plus process-icon"></i>
+
+                <h4>Create Your Account</h4>
+
+                <p>
+                    Register on the platform and access your
+                    personalized learning experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="process-card">
+
+                <div class="badge text-bg-primary process-number">
+                    03
+                </div>
+
+                <i class="bi bi-check-circle process-icon"></i>
+
+                <h4>Register for Classes</h4>
+
+                <p>
+                    Select your preferred classes and manage your
+                    registrations through the dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+
+<div class="container">
+
+    <div class="cta-box">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <span class="cta-label">
+                    READY TO GET STARTED?
+                </span>
+
+                <h2>
+                    Take the Next Step in Your Learning Journey
+                </h2>
+
+                <p>
+                    Explore our classes, register for your preferred
+                    courses and start building your skills today.
+                </p>
+
+            </div>
+
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                <a href="/started" class="btn btn-light btn-lg">
+                    Register Now
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonial-section">
+
+
+<div class="container">
+
+    <div class="text-center mb-5">
+
+        <span class="section-label">
+            STUDENT EXPERIENCE
+        </span>
+
+        <h2 class="section-title">
+            What Our Students Say
+        </h2>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="bi bi-quote"></i>
+                </div>
+
+                <p>
+                    "The registration process is simple and the
+                    dashboard makes it easy to keep track of my classes."
+                </p>
+
+                <div class="testimonial-user">
+
+                    <div class="avatar">
+                        AS
+                    </div>
+
+                    <div>
+                        <strong>Alex Smith</strong>
+                        <small>Student</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="bi bi-quote"></i>
+                </div>
+
+                <p>
+                    "I can quickly explore different courses and
+                    find the information I need before registering."
+                </p>
+
+                <div class="testimonial-user">
+
+                    <div class="avatar">
+                        JD
+                    </div>
+
+                    <div>
+                        <strong>Jordan Davis</strong>
+                        <small>Student</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="bi bi-quote"></i>
+                </div>
+
+                <p>
+                    "The platform provides a clean and convenient
+                    way to manage my course registrations."
+                </p>
+
+                <div class="testimonial-user">
+
+                    <div class="avatar">
+                        RK
+                    </div>
+
+                    <div>
+                        <strong>Ryan Kumar</strong>
+                        <small>Student</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+
+<!-- Student Registration Popup -->
+<div class="modal fade classhub-modal"
+     id="studentRegisterModal"
+     tabindex="-1"
+     aria-labelledby="studentRegisterTitle"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+            <!-- Header -->
+            <div class="register-modal-header">
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                <div class="register-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+
+                <span class="register-eyebrow">
+                    YOUR LEARNING JOURNEY STARTS HERE
+                </span>
+
+                <h2 id="studentRegisterTitle">
+                    Join ClassHub
+                </h2>
+
+                <p>
+                    Create your student account and discover
+                    courses designed for your future.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <div class="modal-body p-4 p-md-5">
+
+                <div class="register-benefit mb-4">
+                    <i class="bi bi-check-circle-fill"></i>
+                    Explore courses, request enrollment and track your progress.
+                </div>
+
+                <form method="post"
+                      action="{% url 's_registerview' %}">
+                    {% csrf_token %}
+
+                    {% if student_form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ student_form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <div class="student-form-fields">
+                        {% for field in student_form %}
+                            <div class="student-form-field">
+
+                                <label for="{{ field.id_for_label }}"
+                                       class="form-label">
+                                    {{ field.label }}
+                                    {% if field.field.required %}
+                                        <span class="text-danger">*</span>
+                                    {% endif %}
+                                </label>
+
+                                {{ field }}
+
+                                {% if field.help_text %}
+                                    <div class="form-text">
+                                        {{ field.help_text }}
+                                    </div>
+                                {% endif %}
+
+                                {% for error in field.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <button type="submit"
+                            class="btn register-submit-btn w-100 mt-3">
+                        Create Student Account
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+
+                    <p class="text-center text-muted small mt-3 mb-0">
+                        Already registered?
+                        <a href="/login" class="register-login-link">
+                            Log in here
+                        </a>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Floating Ask Us Button -->
+<button type="button"
+        id="chatToggle"
+        class="chat-toggle"
+        aria-label="Open ClassHub assistant"
+        aria-expanded="false">
+    <i class="bi bi-chat-dots-fill"></i>
+    <span>Ask Us</span>
+</button>
+
+<!-- Floating Chat Card -->
+<div id="classhubChat"
+     class="classhub-chat"
+     role="dialog"
+     aria-label="ClassHub AI Assistant"
+     aria-hidden="true">
+
+    <!-- Chat Header -->
+    <div class="chat-header">
+        <div class="chat-header-info">
+            <div class="chat-avatar">
+                <i class="bi bi-robot"></i>
+            </div>
+
+            <div>
+                <h5>ClassHub Assistant</h5>
+                <small>
+                    <span class="chat-status-dot"></span>
+                    Ask us anything
+                </small>
+            </div>
+        </div>
+
+        <button type="button"
+                id="chatClose"
+                class="chat-close"
+                aria-label="Close chat">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="chatMessages"
+         class="chat-messages"
+         aria-live="polite">
+        <div class="chat-message bot-message">
+            Hello! 👋 How can I help you?
+        </div>
+
+        <div class="chat-suggestions">
+            <button type="button" class="chat-suggestion">
+                How do I register?
+            </button>
+
+            <button type="button" class="chat-suggestion">
+                How do I view available classes?
+            </button>
+
+            <button type="button" class="chat-suggestion">
+                How do I contact the administrator?
+            </button>
+        </div>
+    </div>
+
+    <!-- Message Input -->
+    <form id="chatForm" class="chat-input-area">
+        {% csrf_token %}
+
+        <input type="text"
+               id="chatInput"
+               placeholder="Type your question..."
+               autocomplete="off"
+               maxlength="2000"
+               aria-label="Your question"
+               required>
+
+        <button type="submit"
+                id="chatSend"
+                aria-label="Send message">
+            <i class="bi bi-send-fill"></i>
+        </button>
+    </form>
+
+    <div class="chat-footer">
+        AI assistant · Verify important information with the administrator
+    </div>
+</div>
+
+
+<!-- Automatically open after 3 seconds -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("chatToggle");
+    const chat = document.getElementById("classhubChat");
+    const close = document.getElementById("chatClose");
+    const form = document.getElementById("chatForm");
+    const input = document.getElementById("chatInput");
+    const send = document.getElementById("chatSend");
+    const messages = document.getElementById("chatMessages");
+
+    if (!toggle || !chat || !form) return;
+
+    function openChat() {
+        chat.classList.add("chat-open");
+        chat.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+        input.focus();
+    }
+
+    function closeChat() {
+        chat.classList.remove("chat-open");
+        chat.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+    }
+
+    toggle.addEventListener("click", function () {
+        if (chat.classList.contains("chat-open")) {
+            closeChat();
+        } else {
+            openChat();
+        }
+    });
+
+    close.addEventListener("click", closeChat);
+
+    function addMessage(text, type) {
+        const bubble = document.createElement("div");
+        bubble.className =
+            "chat-message " +
+            (type === "user" ? "user-message" : "bot-message");
+
+        // Use textContent to safely display user and AI text.
+        bubble.textContent = text;
+        messages.appendChild(bubble);
+        messages.scrollTop = messages.scrollHeight;
+
+        return bubble;
+    }
+
+    // Clicking a suggested question fills and sends it.
+    document.querySelectorAll(".chat-suggestion").forEach(function (button) {
+        button.addEventListener("click", function () {
+            input.value = button.textContent.trim();
+            form.requestSubmit();
+        });
+    });
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const question = input.value.trim();
+        if (!question || send.disabled) return;
+
+        addMessage(question, "user");
+        input.value = "";
+
+        // Hide the suggestions after the first question.
+        const suggestions = messages.querySelector(".chat-suggestions");
+        if (suggestions) suggestions.remove();
+
+        send.disabled = true;
+        input.disabled = true;
+
+        const waiting = addMessage("Finding an answer...", "bot");
+
+        try {
+            const response = await fetch("{% url 'rag_chat' %}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": form.querySelector(
+                        "[name=csrfmiddlewaretoken]"
+                    ).value
+                },
+                body: JSON.stringify({
+                    message: question
+                })
+            });
+
+            const data = await response.json();
+            waiting.remove();
+
+            if (!response.ok) {
+                throw new Error(
+                    data.error || "The assistant could not answer."
+                );
+            }
+
+            addMessage(
+                data.ai_response ||
+                "Sorry, I couldn't find an answer. Please try again.",
+                "bot"
+            );
+
+        } catch (error) {
+            waiting.remove();
+            console.error("ClassHub chat error:", error);
+
+            addMessage("Sorry, I'm unable to answer your question right now. " +
+            "Please try again in a few minutes. If the problem continues, " +
+            "contact the ClassHub administrator at +91 9876543210 " +
+            "or support@classhub.com.",
+            "bot"
+            );
+        } finally {
+            send.disabled = false;
+            input.disabled = false;
+            input.focus();
+        }
+    });
+
+    // Close the chat with Escape.
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            chat.classList.contains("chat-open")
+        ) {
+            closeChat();
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modalElement = document.getElementById("studentRegisterModal");
+
+    if (!modalElement) {
+        console.error("Student registration modal was not found.");
+        return;
+    }
+
+    setTimeout(function () {
+        if (typeof bootstrap === "undefined") {
+            console.error("Bootstrap JavaScript is not loaded.");
+            return;
+        }
+
+        bootstrap.Modal.getOrCreateInstance(modalElement).show();
+    }, 3000);
+});
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,714 @@
+{% extends 'classreg/navbar.html' %}
+{% load static %}
+
+{% block nav_block %}
+
+<section class="admin-page">
+    <div class="container-fluid admin-container">
+
+        <!-- Dashboard header -->
+        <header class="admin-hero">
+            <div class="admin-hero-content">
+                <div class="admin-eyebrow">
+                    <i class="bi bi-shield-check"></i>
+                    CLASSHUB ADMINISTRATION
+                </div>
+
+                <h1>Admin Dashboard</h1>
+                <p>
+                    Your central workspace for managing students, classes,
+                    enrollment requests and communications.
+                </p>
+
+                <div class="admin-hero-meta">
+                    <span><i class="bi bi-check-circle-fill"></i> Management Portal</span>
+                    <span><i class="bi bi-grid-1x2-fill"></i> ClassHub Overview</span>
+                </div>
+            </div>
+
+            <div class="admin-hero-art" aria-hidden="true">
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
+                <div class="hero-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <div class="floating-icon floating-icon-one">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <div class="floating-icon floating-icon-two">
+                    <i class="bi bi-journal-check"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <div class="dashboard-section">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">AT A GLANCE</span>
+                    <h2>Platform Overview</h2>
+                    <p>Track the key activity across your education platform.</p>
+                </div>
+            </div>
+
+            <div class="row g-3 g-xl-4">
+
+                <div class="col-6 col-lg-4 col-xxl-2">
+                    <div class="metric-card metric-blue">
+                        <div class="metric-top">
+                            <div class="metric-icon">
+                                <i class="bi bi-mortarboard-fill"></i>
+                            </div>
+                            <span class="metric-tag">Students</span>
+                        </div>
+                        <div class="metric-value">
+                            {{ total_students|default:0 }}
+                        </div>
+                        <div class="metric-label">Registered students</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-4 col-xxl-2">
+                    <div class="metric-card metric-green">
+                        <div class="metric-top">
+                            <div class="metric-icon">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <span class="metric-tag">Parents</span>
+                        </div>
+                        <div class="metric-value">
+                            {{ total_parents|default:0 }}
+                        </div>
+                        <div class="metric-label">Parent accounts</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-4 col-xxl-2">
+                    <div class="metric-card metric-purple">
+                        <div class="metric-top">
+                            <div class="metric-icon">
+                                <i class="bi bi-journal-bookmark-fill"></i>
+                            </div>
+                            <span class="metric-tag">Classes</span>
+                        </div>
+                        <div class="metric-value">
+                            {{ total_classes|default:0 }}
+                        </div>
+                        <div class="metric-label">Available classes</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-4 col-xxl-2">
+                    <div class="metric-card metric-orange">
+                        <div class="metric-top">
+                            <div class="metric-icon">
+                                <i class="bi bi-hourglass-split"></i>
+                            </div>
+                            <span class="metric-tag">Pending</span>
+                        </div>
+                        <div class="metric-value">
+                            {{ pending_count|default:0 }}
+                        </div>
+                        <div class="metric-label">Awaiting review</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-4 col-xxl-2">
+                    <div class="metric-card metric-teal">
+                        <div class="metric-top">
+                            <div class="metric-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <span class="metric-tag">Approved</span>
+                        </div>
+                        <div class="metric-value">
+                            {{ approved_count|default:0 }}
+                        </div>
+                        <div class="metric-label">Approved enrollments</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-4 col-xxl-2">
+                    <div class="metric-card metric-pink">
+                        <div class="metric-top">
+                            <div class="metric-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <span class="metric-tag">Messages</span>
+                        </div>
+                        <div class="metric-value">
+                            {{ total_contacts|default:0 }}
+                        </div>
+                        <div class="metric-label">Contact inquiries</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="dashboard-section">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">WORKSPACE</span>
+                    <h2>Quick Actions</h2>
+                    <p>Jump directly to the areas you manage most often.</p>
+                </div>
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-6 col-lg-3">
+                    <a href="#enrollment-list" class="quick-action">
+                        <span class="quick-action-icon action-indigo">
+                            <i class="bi bi-clipboard2-check-fill"></i>
+                        </span>
+                        <span class="quick-action-title">Review Enrollments</span>
+                        <span class="quick-action-description">
+                            {{ pending_count|default:0 }} requests awaiting review
+                        </span>
+                        <span class="quick-action-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <a href="#class-list" class="quick-action">
+                        <span class="quick-action-icon action-purple">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                        </span>
+                        <span class="quick-action-title">Manage Classes</span>
+                        <span class="quick-action-description">
+                            View classes and prices
+                        </span>
+                        <span class="quick-action-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <a href="#student-list" class="quick-action">
+                        <span class="quick-action-icon action-green">
+                            <i class="bi bi-person-vcard-fill"></i>
+                        </span>
+                        <span class="quick-action-title">Student Records</span>
+                        <span class="quick-action-description">
+                            Review student accounts
+                        </span>
+                        <span class="quick-action-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <a href="#contact-messages" class="quick-action">
+                        <span class="quick-action-icon action-orange">
+                            <i class="bi bi-chat-square-text-fill"></i>
+                        </span>
+                        <span class="quick-action-title">Contact Messages</span>
+                        <span class="quick-action-description">
+                            View submitted inquiries
+                        </span>
+                        <span class="quick-action-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Students -->
+        <div class="dashboard-section" id="student-list">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">STUDENT DIRECTORY</span>
+                    <h2><i class="bi bi-mortarboard me-2"></i>Student Information</h2>
+                    <p>View and maintain registered student accounts.</p>
+                </div>
+                <span class="count-pill">
+                    {{ total_students|default:0 }} students
+                </span>
+            </div>
+
+            <div class="data-card">
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Registered</th>
+                                <th>Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student in students %}
+                            <tr>
+                                <td>
+                                    <span class="record-id">
+                                        {{ student.Student_ID|default:"—" }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-person">
+                                        <span class="person-avatar avatar-blue">
+                                            {{ student.Name|default:"S"|slice:":1"|upper }}
+                                        </span>
+                                        <span class="person-name">
+                                            {{ student.Name }}
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>{{ student.Email|default:"—" }}</td>
+                                <td>{{ student.Phone|default:"—" }}</td>
+                                <td>
+                                    {{ student.Date_Registered|date:"d M Y"|default:"—" }}
+                                </td>
+                                <td>
+                                    {% if student.Is_Active %}
+                                        <span class="status-pill status-approved">
+                                            <span></span> Active
+                                        </span>
+                                    {% else %}
+                                        <span class="status-pill status-rejected">
+                                            <span></span> Inactive
+                                        </span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="/Sedit/{{ student.id }}/"
+                                           class="table-action action-edit"
+                                           title="Edit student"
+                                           aria-label="Edit student">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <a href="/Sdelete/{{ student.id }}/"
+                                           class="table-action action-delete"
+                                           title="Delete student"
+                                           aria-label="Delete student"
+                                           onclick="return confirm('Delete this student? This action cannot be undone.');">
+                                            <i class="bi bi-trash3"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="7">
+                                    <div class="empty-state">
+                                        <i class="bi bi-people"></i>
+                                        <strong>No students yet</strong>
+                                        <span>Registered student accounts will appear here.</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parents -->
+        <div class="dashboard-section" id="parent-list">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">FAMILY DIRECTORY</span>
+                    <h2><i class="bi bi-people me-2"></i>Parent Information</h2>
+                    <p>Review parent accounts and their linked students.</p>
+                </div>
+                <span class="count-pill">
+                    {{ total_parents|default:0 }} parents
+                </span>
+            </div>
+
+            <div class="data-card">
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Parent</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Linked Students</th>
+                                <th>Registered</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for parent in parents %}
+                            <tr>
+                                <td>
+                                    <div class="table-person">
+                                        <span class="person-avatar avatar-green">
+                                            {{ parent.Name|default:"P"|slice:":1"|upper }}
+                                        </span>
+                                        <span class="person-name">{{ parent.Name }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ parent.Phone|default:"—" }}</td>
+                                <td>{{ parent.Email|default:"—" }}</td>
+                                <td>
+                                    {% for student in parent.students.all %}
+                                        <span class="linked-student">
+                                            {{ student.Student_ID }} — {{ student.Name }}
+                                        </span>
+                                    {% empty %}
+                                        <span class="muted-text">No linked students</span>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {{ parent.Date_Registered|date:"d M Y"|default:"—" }}
+                                </td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="/Pdelete/{{ parent.id }}/"
+                                           class="table-action action-delete"
+                                           title="Delete parent"
+                                           aria-label="Delete parent"
+                                           onclick="return confirm('Delete this parent record?');">
+                                            <i class="bi bi-trash3"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="6">
+                                    <div class="empty-state">
+                                        <i class="bi bi-person-hearts"></i>
+                                        <strong>No parent accounts yet</strong>
+                                        <span>Parent information will appear here when available.</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classes -->
+        <div class="dashboard-section" id="class-list">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">ACADEMIC CATALOG</span>
+                    <h2><i class="bi bi-journal-bookmark me-2"></i>Classes & Courses</h2>
+                    <p>Review available classes, capacity, instructors and pricing.</p>
+                    
+                </div>
+                <span class="count-pill">
+                    {{ total_classes|default:0 }} Classes
+                </span>
+            </div>
+
+            <div class="data-card">
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Course</th>
+                                <th>Instructor</th>
+                                <th>Enrolled Students</th>
+                                <th>Capacity</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for class_item in classes %}
+                            <tr>
+                                <td>
+                                    <div class="table-person">
+                                        <span class="person-avatar avatar-purple">
+                                            <i class="bi bi-book"></i>
+                                        </span>
+                                        <span class="person-name">{{ class_item.name }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ class_item.course|default:"—" }}</td>
+                                <td>{{ class_item.instructor|default:"Not assigned" }}</td>
+                                <td>
+                                    <div class="linked-list">
+                                        {% for student in class_item.students.all %}
+                                            <span class="linked-student">
+                                                {{ student.Name }}
+                                            </span>
+                                        {% empty %}
+                                            <span class="muted-text">No students linked</span>
+                                        {% endfor %}
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="capacity-pill">
+                                        {{ class_item.capacity }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="price-value">
+                                        ₹{{ class_item.price|floatformat:2 }}
+                                    </span>
+                                </td>
+                                <td>
+                                    {%if not class_item.students.all%}
+                                    <div class="table-actions">
+                                        <a href="/classdelete/{{ class_item.id }}/"
+                                           class="table-action action-delete"
+                                           aria-label="Delete parent"
+                                           onclick="return confirm('Are you sure to Delete this class?');">
+                                            <i class="bi bi-trash3"></i>
+                                        </a>
+                                    </div>
+                                    {%else%}
+                                    <div class="table-actions">
+                                        <a class='table-action'>
+                                            <i class='bi bi-exclamation-circle'></i>
+                                        </a>
+                                    <div>
+                                    {%endif%}
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="6">
+                                    <div class="empty-state">
+                                        <i class="bi bi-journal-x"></i>
+                                        <strong>No classes available</strong>
+                                        <span>Add a class to populate the catalog.</span>
+                                        <a href="{% url 'class_create' %}"
+                                           class="primary-action mt-3">
+                                            <i class="bi bi-plus-lg"></i> Add first class
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class='d-flex gap-auto'>
+                <div class='class-exclamation'>
+                    <p><i class='bi bi-exclamation-circle'></i> The classes with students enrolled cannot be deleted.</p>
+                </div>
+                <div class='text-end'>
+                    <a href="{% url 'class_create' %}" class="m-3 primary-action">
+                        <i class="bi bi-plus-lg"></i>
+                        Add Class
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrollment requests -->
+        <div class="dashboard-section" id="enrollment-list">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">ENROLLMENT MANAGEMENT</span>
+                    <h2><i class="bi bi-clipboard2-check me-2"></i>Enrollment Requests</h2>
+                    <p>Review student requests and record an approval decision.</p>
+                </div>
+                <span class="count-pill count-warning">
+                    {{ pending_count|default:0 }} pending
+                </span>
+            </div>
+
+            <div class="data-card">
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Class & Course</th>
+                                <th>Price</th>
+                                <th>Requested On</th>
+                                <th>Status</th>
+                                <th class="text-center">Decision</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for enrollment in enrollments %}
+                            <tr>
+                                <td>
+                                    <div class="person-name">
+                                        {{ enrollment.student.Name }}
+                                    </div>
+                                    <div class="record-id mt-1">
+                                        {{ enrollment.student.Student_ID }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="person-name">
+                                        {{ enrollment.registered_class.name }}
+                                    </div>
+                                    <div class="muted-text mt-1">
+                                        {{ enrollment.registered_class.course }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="price-value">
+                                        ₹{{ enrollment.registered_class.price|floatformat:2 }}
+                                    </span>
+                                </td>
+                                <td>
+                                    {{ enrollment.registered_on|date:"d M Y"|default:"—" }}
+                                </td>
+                                <td>
+                                    {% if enrollment.status == "Approved" %}
+                                        <span class="status-pill status-approved">
+                                            <span></span> Approved
+                                        </span>
+                                    {% elif enrollment.status == "Pending" %}
+                                        <span class="status-pill status-pending">
+                                            <span></span> Pending
+                                        </span>
+                                    {% else %}
+                                        <span class="status-pill status-rejected">
+                                            <span></span> Rejected
+                                        </span>
+                                    {% endif %}
+                                </td>
+                                <td class='text-center'>
+                                    {% if enrollment.status == "Pending" %}
+                                        <div class="decision-actions">
+                                            <form method="POST"
+                                                  action="{% url 'update_enrollment_status' enrollment.id %}">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="status" value="Approved">
+                                                <button type="submit"
+                                                        class="decision-button decision-approve"
+                                                        onclick="return confirm('Approve this enrollment?');">
+                                                    <i class="bi bi-check-lg"></i> Approve
+                                                </button>
+                                            </form>
+
+                                            <form method="POST"
+                                                  action="{% url 'update_enrollment_status' enrollment.id %}">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="status" value="Rejected">
+                                                <button type="submit"
+                                                        class="decision-button decision-reject"
+                                                        onclick="return confirm('Reject this enrollment?');">
+                                                    <i class="bi bi-x-lg"></i> Reject
+                                                </button>
+                                            </form>
+                                        </div>
+                                    {% else %}
+                                        <span class="muted-text">Decision recorded</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="6">
+                                    <div class="empty-state">
+                                        <i class="bi bi-clipboard2"></i>
+                                        <strong>No enrollment requests</strong>
+                                        <span>New requests will appear here for review.</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact messages -->
+        <div class="dashboard-section" id="contact-messages">
+            <div class="dashboard-section-heading">
+                <div>
+                    <span class="section-kicker">COMMUNICATIONS</span>
+                    <h2><i class="bi bi-chat-square-text me-2"></i>Contact Messages</h2>
+                    <p>View inquiries submitted through your contact page.</p>
+                </div>
+                <span class="count-pill">
+                    {{ total_contacts|default:0 }} messages
+                </span>
+            </div>
+
+            <div class="data-card">
+                <div class="table-responsive">
+                    <table class="table admin-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Contact</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Received</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contact in contacts %}
+                            <tr>
+                                <td>
+                                    <div class="table-person">
+                                        <span class="person-avatar avatar-orange">
+                                            {{ contact.Name|default:"C"|slice:":1"|upper }}
+                                        </span>
+                                        <span class="person-name">{{ contact.Name }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ contact.Phone|default:"—" }}</td>
+                                <td>{{ contact.Email|default:"—" }}</td>
+                                <td>
+                                    <div class="contact-message">
+                                        {{ contact.Message|default:"—" }}
+                                    </div>
+                                </td>
+                                <td>
+                                    {{ contact.contacted_on|date:"d M Y, H:i"|default:"—" }}
+                                </td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="/Cdelete/{{ contact.id }}/"
+                                           class="table-action action-delete"
+                                           title="Delete contact message"
+                                           aria-label="Delete contact message"
+                                           onclick="return confirm('Delete this contact message?');">
+                                            <i class="bi bi-trash3"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="6">
+                                    <div class="empty-state">
+                                        <i class="bi bi-envelope-open"></i>
+                                        <strong>No messages received</strong>
+                                        <span>Contact inquiries will appear here.</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="admin-footer">
+            <span>ClassHub Administration</span>
+            <span>Education management made simpler.</span>
+        </footer>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends "classreg/navbar.html" %}
+{% load static %}
+
+{% block nav_block %}
+
+<!-- =========================
+     GALLERY HERO
+========================= -->
+<section class="gallery-hero">
+    <div class="container text-center">
+        <span class="badge bg-warning text-dark px-3 py-2 mb-3">
+            CLASSHUB GALLERY
+        </span>
+
+        <h1 class="fw-bold">
+            Explore Our Learning Environment
+        </h1>
+
+        <p>
+            Take a look at our classrooms, courses, learning activities,
+            and technology-focused environment.
+        </p>
+    </div>
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">
+            Our Learning Gallery
+        </h2>
+
+        <p class="section-description mx-auto">
+            Explore moments and visuals from our learning environment,
+            programming courses, and classroom activities.
+        </p>
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- Image 1 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/classroom.jpg' %}"
+                     alt="Classroom learning environment">
+
+                <div class="gallery-overlay">
+                    <h5>Learning Environment</h5>
+                    <p>Interactive classroom experience</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 2 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/python.png' %}"
+                     alt="Python programming course">
+
+                <div class="gallery-overlay">
+                    <h5>Python Programming</h5>
+                    <p>Learn programming fundamentals</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 3 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/java1.jpg' %}"
+                     alt="Java programming course">
+
+                <div class="gallery-overlay">
+                    <h5>Java Programming</h5>
+                    <p>Build strong programming concepts</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 4 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/django1.png' %}"
+                     alt="Django web development course">
+
+                <div class="gallery-overlay">
+                    <h5>Django Development</h5>
+                    <p>Build modern web applications</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 5 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/classroom1.jpg' %}"
+                     alt="ClassHub learning portal">
+
+                <div class="gallery-overlay">
+                    <h5>ClassHub Platform</h5>
+                    <p>Simple and organized course management</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 6 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/classroom4.jpg' %}"
+                     alt="Students in classroom">
+
+                <div class="gallery-overlay">
+                    <h5>Classroom Activities</h5>
+                    <p>Learning through practical sessions</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 7 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/programming.jpg' %}"
+                     alt="Python development">
+
+                <div class="gallery-overlay">
+                    <h5>Programming Practice</h5>
+                    <p>Hands-on programming exercises</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 8 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/web.jpg' %}"
+                     alt="Java development">
+
+                <div class="gallery-overlay">
+                    <h5>Application Development</h5>
+                    <p>Develop practical programming skills</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Image 9 -->
+        <div class="col-sm-6 col-lg-4">
+            <div class="gallery-page-card">
+                <img src="{% static 'images/dev.jpg' %}"
+                     alt="Django web application development">
+
+                <div class="gallery-overlay">
+                    <h5>Web Development</h5>
+                    <p>Create dynamic web applications</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="container my-5">
+    <div class="gallery-cta text-center p-5 rounded-4">
+
+        <i class="bi bi-images gallery-cta-icon"></i>
+
+        <h2 class="fw-bold mt-3">
+            Ready to Start Learning?
+        </h2>
+
+        <p class="mx-auto">
+            Explore our available classes and find the right course
+            for your learning goals.
+        </p>
+
+        <a href="/started" class="btn btn-warning px-4 py-2 fw-semibold">
+            <i class="bi bi-person-plus me-1"></i>
+            Register Now
+        </a>
+
+    </div>
+</section>
+
+{% endblock %}

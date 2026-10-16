@@ -1,0 +1,456 @@
+{% extends "classreg/navbar.html" %}
+{% load static %}
+
+{% block nav_block %}
+
+<!-- Java Hero -->
+<section class="course-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3">
+                    PROGRAMMING COURSE
+                </span>
+
+                <h1 class="display-4 fw-bold text-white">
+                    Java Classes
+                </h1>
+
+                <p class="lead text-white-50 mt-3">
+                    Build strong programming fundamentals and learn
+                    to develop robust applications using Java.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="/started"
+                       class="btn btn-warning px-4 py-2 me-2">
+                        <i class="bi bi-person-plus me-1"></i>
+                        Register Now
+                    </a>
+
+                    <a href="#courseOverview"
+                       class="btn btn-outline-light px-4 py-2">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 text-center">
+
+                <div class="course-image-card">
+
+                    <img src="{% static 'images/java.jpg' %}"
+                         alt="Java Programming"
+                         class="img-fluid rounded-4">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Course Overview -->
+<section class="container py-5" id="courseOverview">
+
+    <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+
+            <span class="text-primary fw-semibold">
+                COURSE OVERVIEW
+            </span>
+
+            <h2 class="fw-bold mt-2 mb-4">
+                Learn Java From the Fundamentals
+            </h2>
+
+            <p class="text-muted">
+                Java is a versatile, high-level programming language
+                known for its platform independence, reliability, and
+                object-oriented programming features. It is widely used
+                in enterprise applications, web development, Android
+                applications, and software development.
+            </p>
+
+            <p class="text-muted">
+                Our Java classes are designed to help students understand
+                programming fundamentals and gradually progress toward
+                object-oriented programming and practical application
+                development.
+            </p>
+
+        </div>
+
+
+        <div class="col-lg-6">
+
+            <div class="course-info-box shadow-sm">
+
+                <h4 class="fw-bold mb-4">
+                    Course Highlights
+                </h4>
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-code-slash"></i>
+
+                    <div>
+                        <h6 class="fw-bold mb-1">
+                            Java Fundamentals
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Learn variables, data types, operators,
+                            conditions, loops, and basic Java syntax.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-diagram-3"></i>
+
+                    <div>
+                        <h6 class="fw-bold mb-1">
+                            Object-Oriented Programming
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Understand classes, objects, inheritance,
+                            polymorphism, abstraction, and encapsulation.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-database"></i>
+
+                    <div>
+                        <h6 class="fw-bold mb-1">
+                            Exception & Data Handling
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Work with arrays, collections, exceptions,
+                            and structured data in Java.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="course-info-item">
+
+                    <i class="bi bi-laptop"></i>
+
+                    <div>
+                        <h6 class="fw-bold mb-1">
+                            Practical Projects
+                        </h6>
+
+                        <p class="text-muted small mb-0">
+                            Apply Java concepts through programming
+                            exercises and practical projects.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- What You Will Learn -->
+<section class="bg-light py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-semibold">
+                CURRICULUM
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                What You'll Learn
+            </h2>
+
+            <p class="text-muted mx-auto section-description">
+                A structured learning path covering essential Java
+                programming concepts.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- 01 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        01
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Java Fundamentals
+                    </h5>
+
+                    <p class="text-muted">
+                        Learn variables, data types, operators,
+                        input/output, conditional statements, and loops.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        02
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Methods & Packages
+                    </h5>
+
+                    <p class="text-muted">
+                        Create reusable methods and understand packages,
+                        parameters, return values, and access modifiers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        03
+                    </div>
+
+                    <h5 class="fw-bold">
+                        OOP Concepts
+                    </h5>
+
+                    <p class="text-muted">
+                        Learn classes, objects, inheritance, polymorphism,
+                        abstraction, and encapsulation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        04
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Arrays & Collections
+                    </h5>
+
+                    <p class="text-muted">
+                        Work with arrays and Java collection classes
+                        such as List, Set, and Map.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        05
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Exception Handling
+                    </h5>
+
+                    <p class="text-muted">
+                        Understand exceptions and learn how to handle
+                        runtime errors effectively.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="learning-card h-100">
+
+                    <div class="learning-number">
+                        06
+                    </div>
+
+                    <h5 class="fw-bold">
+                        Practical Applications
+                    </h5>
+
+                    <p class="text-muted">
+                        Apply Java concepts through programming exercises
+                        and application-based projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Classroom Gallery -->
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <span class="text-primary fw-semibold">
+            LEARNING ENVIRONMENT
+        </span>
+
+        <h2 class="fw-bold mt-2">
+            Our Classroom
+        </h2>
+
+        <p class="text-muted">
+            Take a look at our learning environment.
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom1.jpg' %}"
+                     alt="Python classroom"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom2.jpg' %}"
+                     alt="Python training"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom3.jpg' %}"
+                     alt="Python programming class"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+
+        <div class="col-6 col-md-3">
+
+            <div class="gallery-card">
+                <img src="{% static 'images/classroom4.jpg' %}"
+                     alt="Python learning session"
+                     class="img-fluid">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Career CTA -->
+<section class="container my-5">
+
+    <div class="course-cta text-center p-5 rounded-4">
+
+        <div class="cta-icon mb-3">
+            <i class="bi bi-briefcase-fill"></i>
+        </div>
+
+        <h2 class="fw-bold">
+            Ready to Start Learning Java?
+        </h2>
+
+        <p class="text-muted mx-auto mt-3">
+            Build your programming foundation, strengthen your
+            object-oriented programming skills, and take the next
+            step toward a career in software development.
+        </p>
+
+        <a href="/started"
+           class="btn btn-primary px-4 py-2 mt-2">
+
+            <i class="bi bi-arrow-right-circle me-2"></i>
+            Register for Java Classes
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

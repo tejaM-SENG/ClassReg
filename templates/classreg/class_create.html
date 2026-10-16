@@ -1,0 +1,260 @@
+{% extends 'classreg/navbar.html' %}
+
+{% block nav_block %}
+
+<div class="class-create-page">
+    <div class="class-create-container">
+
+        <a href="{% url 'dashboard' %}" class="class-back-link">
+            <i class="bi bi-arrow-left"></i>
+            Back to Dashboard
+        </a>
+
+        <div class="class-page-header">
+            <h1>Create New Class</h1>
+            <p>
+                Add a new class to your registration system and configure
+                its course details, schedule, pricing, and availability.
+            </p>
+        </div>
+
+        <div class="class-form-card">
+
+            <div class="class-form-header">
+                <h2>
+                    <i class="bi bi-journal-plus me-2"></i>
+                    Class Information
+                </h2>
+                <p>
+                    Fields marked with * are required.
+                </p>
+            </div>
+
+            <form method="POST"
+                  action="{% url 'class_create' %}"
+                  novalidate>
+
+                {% csrf_token %}
+
+                <div class="class-form-body">
+
+                    <!-- Basic Information -->
+
+                    <h3 class="class-section-title">
+                        <i class="bi bi-book"></i>
+                        Basic Information
+                    </h3>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="class-field">
+                                <label for="{{ form.name.id_for_label }}">
+                                    Class Name <span class="required">*</span>
+                                </label>
+
+                                {{ form.name }}
+
+                                {% if form.name.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.name.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="class-field">
+                                <label for="{{ form.course.id_for_label }}">
+                                    Course Name <span class="required">*</span>
+                                </label>
+
+                                {{ form.course }}
+
+                                {% if form.course.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.course.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="class-field">
+                                <label for="{{ form.instructor.id_for_label }}">
+                                    Instructor
+                                </label>
+
+                                {{ form.instructor }}
+
+                                {% if form.instructor.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.instructor.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="class-field">
+                                <label for="{{ form.schedule.id_for_label }}">
+                                    Class Schedule
+                                </label>
+
+                                {{ form.schedule }}
+
+                                {% if form.schedule.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.schedule.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="class-field">
+                                <label for="{{ form.description.id_for_label }}">
+                                    Class Description
+                                </label>
+
+                                {{ form.description }}
+
+                                <span class="help-text">
+                                    Describe the course content and what
+                                    students can expect to learn.
+                                </span>
+
+                                {% if form.description.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.description.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Capacity and Pricing -->
+
+                    <h3 class="class-section-title mt-4">
+                        <i class="bi bi-currency-rupee"></i>
+                        Capacity and Pricing
+                    </h3>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="class-field">
+                                <label for="{{ form.capacity.id_for_label }}">
+                                    Maximum Students
+                                    <span class="required">*</span>
+                                </label>
+
+                                {{ form.capacity }}
+
+                                <span class="help-text">
+                                    Maximum number of students allowed
+                                    in this class.
+                                </span>
+
+                                {% if form.capacity.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.capacity.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="class-field">
+                                <label for="{{ form.price.id_for_label }}">
+                                    Class Price (₹)
+                                    <span class="required">*</span>
+                                </label>
+
+                                {{ form.price }}
+
+                                <span class="help-text">
+                                    Enter the class fee in Indian rupees.
+                                    Use 0 for a free class.
+                                </span>
+
+                                {% if form.price.errors %}
+                                    <ul class="field-errors">
+                                        {% for error in form.price.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Availability -->
+
+                    <h3 class="class-section-title mt-4">
+                        <i class="bi bi-toggles"></i>
+                        Availability
+                    </h3>
+
+                    <div class="class-status-box">
+                        <div>
+                            <strong>Make this class active</strong>
+                            <small>
+                                Active classes can be offered for registration.
+                                Inactive classes can be hidden from registration
+                                options, depending on your views.
+                            </small>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            {{ form.is_active }}
+                        </div>
+                    </div>
+
+                    {% if form.is_active.errors %}
+                        <ul class="field-errors">
+                            {% for error in form.is_active.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                </div>
+
+                <div class="class-form-footer">
+
+                    <a href="{% url 'dashboard' %}"
+                       class="class-action-btn class-btn-cancel">
+                        <i class="bi bi-x-circle"></i>
+                        Cancel
+                    </a>
+
+                    <button type="submit"
+                            class="class-action-btn class-btn-save">
+                        <i class="bi bi-check-circle"></i>
+                        Create Class
+                    </button>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
