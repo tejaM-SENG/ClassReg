@@ -3,3 +3,4 @@ djangorestframework
 google-genai
 validators
 requests
+gunicorn
