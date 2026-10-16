@@ -5,3 +5,4 @@ validators
 requests
 gunicorn
 dotenv
+whitenoise
