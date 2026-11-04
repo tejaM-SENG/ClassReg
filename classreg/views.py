@@ -210,7 +210,7 @@ def user_login(request):
                 error = "Invalid username or password."
 
             elif role == "admin":
-                if not user.is_superuser:
+                if not (user.is_staff or user.is_superuser):
                     error = "This account is not an administrator."
                 else:
                     login(request, user)
