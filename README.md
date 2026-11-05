@@ -104,6 +104,8 @@ ClassReg/
 │   ├── images/
 │   └── css/
 │
+├── screenshots/
+│
 ├── manage.py
 ├── requirements.txt
 ├── db.sqlite3
