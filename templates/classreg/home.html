@@ -123,7 +123,7 @@
     <div class="text-center mb-5">
 
         <span class="section-label">
-            WHY CLASSHUB?
+            WHY CLASSREG?
         </span>
 
         <h2 class="section-title">
@@ -644,7 +644,7 @@
 
 
 <!-- Student Registration Popup -->
-<div class="modal fade classhub-modal"
+<div class="modal fade classreg-modal"
      id="studentRegisterModal"
      tabindex="-1"
      aria-labelledby="studentRegisterTitle"
@@ -669,7 +669,7 @@
                 </span>
 
                 <h2 id="studentRegisterTitle">
-                    Join ClassHub
+                    Join ClassReg
                 </h2>
 
                 <p>
@@ -750,17 +750,17 @@
 <button type="button"
         id="chatToggle"
         class="chat-toggle"
-        aria-label="Open ClassHub assistant"
+        aria-label="Open ClassReg assistant"
         aria-expanded="false">
     <i class="bi bi-chat-dots-fill"></i>
     <span>Ask Us</span>
 </button>
 
 <!-- Floating Chat Card -->
-<div id="classhubChat"
-     class="classhub-chat"
+<div id="classregChat"
+     class="classreg-chat"
      role="dialog"
-     aria-label="ClassHub AI Assistant"
+     aria-label="ClassReg AI Assistant"
      aria-hidden="true">
 
     <!-- Chat Header -->
@@ -771,7 +771,7 @@
             </div>
 
             <div>
-                <h5>ClassHub Assistant</h5>
+                <h5>ClassReg Assistant</h5>
                 <small>
                     <span class="chat-status-dot"></span>
                     Ask us anything
@@ -839,7 +839,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.getElementById("chatToggle");
-    const chat = document.getElementById("classhubChat");
+    const chat = document.getElementById("classregChat");
     const close = document.getElementById("chatClose");
     const form = document.getElementById("chatForm");
     const input = document.getElementById("chatInput");
@@ -943,12 +943,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         } catch (error) {
             waiting.remove();
-            console.error("ClassHub chat error:", error);
+            console.error("ClassReg chat error:", error);
 
             addMessage("Sorry, I'm unable to answer your question right now. " +
             "Please try again in a few minutes. If the problem continues, " +
-            "contact the ClassHub administrator at +91 9876543210 " +
-            "or support@classhub.com.",
+            "contact the ClassReg administrator at +91 9876543210 " +
+            "or support@classreg.com.",
             "bot"
             );
         } finally {
