@@ -13,7 +13,7 @@ from django.db.models import Count
 from datetime import date
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .gemini_service import get_classhub_response
+from .gemini_service import get_classreg_response
 import logging
 from django.db.models.deletion import ProtectedError
 
@@ -705,13 +705,13 @@ def request_enrollment(request, class_id):
 
 
 
-def is_classhub_admin(user):
+def is_classreg_admin(user):
     return user.is_authenticated and (
         user.is_staff or user.is_superuser
     )
 
 @login_required
-@user_passes_test(is_classhub_admin)
+@user_passes_test(is_classreg_admin)
 @require_POST
 def update_enrollment_status(request, enrollment_id):
     enrollment = ClassEnrollment.objects.get(pk=enrollment_id)
@@ -786,12 +786,12 @@ def rag_chat(request):
         )
 
     try:
-        answer = get_classhub_response(question)
+        answer = get_classreg_response(question)
 
         if not answer:
             answer = (
                 "I'm unable to provide an answer right now. "
-                "Please contact the ClassHub administrator."
+                "Please contact the ClassReg administrator."
             )
 
         return Response({
@@ -800,7 +800,7 @@ def rag_chat(request):
         })
 
     except Exception:
-        logger.exception("ClassHub assistant request failed")
+        logger.exception("ClassReg assistant request failed")
 
         return Response(
             {
