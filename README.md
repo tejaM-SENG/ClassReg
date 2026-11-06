@@ -1,16 +1,16 @@
-# ClassHub – Class Registration Management System
+# ClassReg – Class Registration Management System
 
-ClassHub is a web-based Class Registration Management System developed using Python and Django. The application simplifies the class enrollment process by providing dedicated dashboards for administrators, parents, and students, along with an enrollment approval workflow.
+ClassReg is a web-based Class Registration Management System developed using Python and Django. The application simplifies the class enrollment process by providing dedicated dashboards for administrators, parents, and students, along with an enrollment approval workflow.
 
 ## 🚀 Live Demo
 
 **Live Application:**  https://classreg-95wo.onrender.com/   
 
-**GitHub Repository:**  https://github.com/tejaM-SENG/ClassHub/
+**GitHub Repository:**  https://github.com/tejaM-SENG/ClassReg/
 
 ## 📌 Project Overview
 
-ClassHub is designed to streamline academic class registration and enrollment management.
+ClassReg is designed to streamline academic class registration and enrollment management.
 
 The platform allows parents to manage their students' information and register them for available classes. Administrators can manage class offerings, review enrollment requests, and approve or reject registrations through a centralized dashboard.
 
@@ -77,7 +77,7 @@ Use the following demo accounts to explore the application.
 ## 📂 Project Structure
 
 ```text
-ClassHub/
+ClassReg/
 │
 ├── classreg/
 │   ├── migrations/
@@ -126,7 +126,7 @@ git clone YOUR_GITHUB_REPOSITORY_URL
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd ClassHub
+cd ClassReg
 ```
 
 ### 3. Create a Virtual Environment
