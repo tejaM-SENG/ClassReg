@@ -32,7 +32,7 @@
 
 
 <!-- Single-Line Scrolling Announcement -->
-<div class="classhub-ticker">
+<div class="classreg-ticker">
     <div class="ticker-label">
         <i class="bi bi-megaphone-fill"></i>
         <span>CLASSREG</span>
@@ -276,7 +276,7 @@
     {% if messages %}
         {% for message in messages %}
 
-            <div class="classhub-alert
+            <div class="classreg-alert
                 {% if message.tags == 'success' %}
                     alert-success
                 {% elif message.tags == 'error' %}
@@ -288,7 +288,7 @@
                 {% endif %}"
                 role="alert">
 
-                <div class="classhub-alert-icon">
+                <div class="classreg-alert-icon">
                     {% if message.tags == 'success' %}
                         <i class="bi bi-check-circle-fill"></i>
                     {% elif message.tags == 'error' %}
@@ -300,8 +300,8 @@
                     {% endif %}
                 </div>
 
-                <div class="classhub-alert-content">
-                    <div class="classhub-alert-title">
+                <div class="classreg-alert-content">
+                    <div class="classreg-alert-title">
                         {% if message.tags == 'success' %}
                             Success
                         {% elif message.tags == 'error' %}
@@ -317,9 +317,9 @@
                 </div>
 
                 <button type="button"
-                        class="classhub-alert-close"
+                        class="classreg-alert-close"
                         aria-label="Dismiss notification"
-                        onclick="this.closest('.classhub-alert').remove()">
+                        onclick="this.closest('.classreg-alert').remove()">
                     <i class="bi bi-x-lg"></i>
                 </button>
 
@@ -329,14 +329,14 @@
     {% endif %}
 
     {% if error %}
-        <div class="classhub-alert alert-warning" role="alert">
+        <div class="classreg-alert alert-warning" role="alert">
 
-            <div class="classhub-alert-icon">
+            <div class="classreg-alert-icon">
                 <i class="bi bi-exclamation-triangle-fill"></i>
             </div>
 
-            <div class="classhub-alert-content">
-                <div class="classhub-alert-title">
+            <div class="classreg-alert-content">
+                <div class="classreg-alert-title">
                     Please Note
                 </div>
 
@@ -344,9 +344,9 @@
             </div>
 
             <button type="button"
-                    class="classhub-alert-close"
+                    class="classreg-alert-close"
                     aria-label="Dismiss notification"
-                    onclick="this.closest('.classhub-alert').remove()">
+                    onclick="this.closest('.classreg-alert').remove()">
                 <i class="bi bi-x-lg"></i>
             </button>
 
@@ -478,7 +478,7 @@
 
             <p class="footer-contact">
                 <i class="bi bi-envelope me-2"></i>
-                support@classhub.com
+                support@classreg.com
             </p>
 
             <p class="footer-contact">
