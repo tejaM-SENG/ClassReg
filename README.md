@@ -82,7 +82,7 @@ ClassReg/
 ├── classreg/
 │   ├── migrations/
 │   ├── tests.py
-│   ├── classhub_faqs.txt
+│   ├── classreg_faqs.txt
 │   ├── gemini_service.py
 │   ├── middleware.py
 │   ├── models.py
