@@ -55,7 +55,8 @@ Use the following demo accounts to explore the application.
 |---|---|---|
 | Admin | demo@admin | demo@1234 |
 | Parent | demo@parent | pare@1234 |
-| Student | demo@student | stud@1234 |
+| Student1 | demo@student1 | stud@1234 |
+| Student2 | demo@student2 | stud@1234 |
 
 **Note:** Replace these placeholders with actual accounts created in your deployed application. Use dedicated test accounts and sample data instead of personal credentials.
 
