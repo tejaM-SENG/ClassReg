@@ -98,12 +98,12 @@ def search_documents(question):
     return None
 
 
-def is_classhub_question(question):
-    """Identify questions about ClassHub services and policies."""
+def is_classreg_question(question):
+    """Identify questions about ClassReg services and policies."""
     text = normalize(question)
 
     keywords = [
-        "classhub", "register", "registration", "enroll",
+        "classreg", "register", "registration", "enroll",
         "enrollment", "fee", "fees", "tuition", "schedule",
         "deadline", "instructor", "course", "class availability",
         "payment", "refund", "class policy", "available classes",
@@ -112,18 +112,18 @@ def is_classhub_question(question):
     return any(keyword in text for keyword in keywords)
 
 
-def get_classhub_response(question):
+def get_classreg_response(question):
     # Step 1: Search the FAQ without using AI.
     faq_answer = search_documents(question)
 
     if faq_answer:
         return faq_answer
 
-    # Step 2: Do not invent ClassHub-specific information.
-    if is_classhub_question(question):
+    # Step 2: Do not invent ClassReg-specific information.
+    if is_classreg_question(question):
         return (
             "I'm an AI assistant and couldn't verify that information. "
-            f"Please contact the ClassHub administrator at "
+            f"Please contact the ClassReg administrator at "
             f"{CONTACT_PHONE} or {CONTACT_EMAIL}."
         )
 
