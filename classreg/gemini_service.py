@@ -7,10 +7,10 @@ from google import genai
 
 client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
-FAQ_FILE = Path(__file__).resolve().parent / "classhub_faqs.txt"
+FAQ_FILE = Path(__file__).resolve().parent / "classreg_faqs.txt"
 
 CONTACT_PHONE = "+91 9876543210"
-CONTACT_EMAIL = "support@classhub.com"
+CONTACT_EMAIL = "support@classreg.com"
 
 
 def normalize(text):
