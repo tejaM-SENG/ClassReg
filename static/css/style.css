@@ -1841,7 +1841,7 @@ RESPONSIVE
 
 
 /* =====================================================
-   CLASSHUB ADMIN DASHBOARD
+   CLASSREG ADMIN DASHBOARD
    ===================================================== */
 
 .admin-page {
@@ -2038,7 +2038,7 @@ RESPONSIVE
 
 
 /* =====================================
-   CLASSHUB FLOATING NOTIFICATIONS
+   CLASSREG FLOATING NOTIFICATIONS
 ===================================== */
 
 .admin-alerts {
@@ -2056,7 +2056,7 @@ RESPONSIVE
 }
 
 /* Individual floating alert */
-.admin-alerts .classhub-alert {
+.admin-alerts .classreg-alert {
     width: 100%;
     margin: 0;
     pointer-events: auto;
@@ -2090,14 +2090,14 @@ RESPONSIVE
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .admin-alerts .classhub-alert {
+    .admin-alerts .classreg-alert {
         animation: none;
     }
 }
 
 
 /* Base notification card */
-.classhub-alert {
+.classreg-alert {
     --alert-color: #2563eb;
     --alert-bg: #eff6ff;
     --alert-border: #bfdbfe;
@@ -2118,39 +2118,39 @@ RESPONSIVE
     color: #1f2937;
     box-shadow: 0 5px 18px rgba(15, 23, 42, 0.045);
 
-    animation: classhubAlertIn 0.35s ease-out;
+    animation: classregAlertIn 0.35s ease-out;
 }
 
 /* Success */
-.classhub-alert.alert-success {
+.classreg-alert.alert-success {
     --alert-color: #16a34a;
     --alert-bg: #f0fdf4;
     --alert-border: #bbf7d0;
 }
 
 /* Error */
-.classhub-alert.alert-danger {
+.classreg-alert.alert-danger {
     --alert-color: #dc2626;
     --alert-bg: #fef2f2;
     --alert-border: #fecaca;
 }
 
 /* Warning */
-.classhub-alert.alert-warning {
+.classreg-alert.alert-warning {
     --alert-color: #d97706;
     --alert-bg: #fffbeb;
     --alert-border: #fde68a;
 }
 
 /* Information */
-.classhub-alert.alert-info {
+.classreg-alert.alert-info {
     --alert-color: #2563eb;
     --alert-bg: #eff6ff;
     --alert-border: #bfdbfe;
 }
 
 /* Icon container */
-.classhub-alert-icon {
+.classreg-alert-icon {
     flex-shrink: 0;
     width: 43px;
     height: 43px;
@@ -2166,19 +2166,19 @@ RESPONSIVE
 }
 
 /* Text content */
-.classhub-alert-content {
+.classreg-alert-content {
     flex: 1;
     min-width: 0;
 }
 
-.classhub-alert-title {
+.classreg-alert-title {
     margin-bottom: 3px;
     color: var(--alert-color);
     font-size: 0.95rem;
     font-weight: 750;
 }
 
-.classhub-alert-content p {
+.classreg-alert-content p {
     margin: 0;
     color: #475569;
     font-size: 0.92rem;
@@ -2187,7 +2187,7 @@ RESPONSIVE
 }
 
 /* Close button */
-.classhub-alert-close {
+.classreg-alert-close {
     position: absolute;
     top: 50%;
     right: 15px;
@@ -2211,18 +2211,18 @@ RESPONSIVE
         color 0.2s ease;
 }
 
-.classhub-alert-close:hover {
+.classreg-alert-close:hover {
     color: var(--alert-color);
     background: rgba(255, 255, 255, 0.85);
 }
 
-.classhub-alert-close:focus-visible {
+.classreg-alert-close:focus-visible {
     outline: 2px solid var(--alert-color);
     outline-offset: 3px;
 }
 
 /* Entrance animation */
-@keyframes classhubAlertIn {
+@keyframes classregAlertIn {
     from {
         opacity: 0;
         transform: translateY(-8px);
@@ -2242,29 +2242,29 @@ RESPONSIVE
         gap: 10px;
     }
 
-    .classhub-alert {
+    .classreg-alert {
         align-items: flex-start;
         gap: 11px;
         padding: 14px 42px 14px 12px;
         border-radius: 12px;
     }
 
-    .classhub-alert-icon {
+    .classreg-alert-icon {
         width: 35px;
         height: 35px;
         border-radius: 10px;
         font-size: 1.05rem;
     }
 
-    .classhub-alert-title {
+    .classreg-alert-title {
         font-size: 0.9rem;
     }
 
-    .classhub-alert-content p {
+    .classreg-alert-content p {
         font-size: 0.85rem;
     }
 
-    .classhub-alert-close {
+    .classreg-alert-close {
         top: 12px;
         right: 8px;
         transform: none;
@@ -2273,11 +2273,11 @@ RESPONSIVE
 
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .classhub-alert {
+    .classreg-alert {
         animation: none;
     }
 
-    .classhub-alert-close {
+    .classreg-alert-close {
         transition: none;
     }
 }
@@ -3544,7 +3544,7 @@ RESPONSIVE
 
 
 /* ========================================
-   CLASSHUB PARENT PORTAL
+   CLASSREG PARENT PORTAL
 ======================================== */
 
 .parent-dashboard-page,
@@ -4615,9 +4615,9 @@ RESPONSIVE
 
 
     
-/* ===== CLASSHUB SINGLE-LINE TICKER ===== */
+/* ===== CLASSREG SINGLE-LINE TICKER ===== */
 
-.classhub-ticker {
+.classreg-ticker {
     height: 40px;
     width: 100%;
     display: flex;
@@ -4659,7 +4659,7 @@ RESPONSIVE
     align-items: center;
     width: max-content;
     flex-shrink: 0;
-    animation: classhub-scroll 38s linear infinite;
+    animation: classreg-scroll 38s linear infinite;
 }
 
 .ticker-content {
@@ -4716,7 +4716,7 @@ RESPONSIVE
     color: #102a46;
 }
 
-@keyframes classhub-scroll {
+@keyframes classreg-scroll {
     from {
         transform: translateX(0);
     }
@@ -4728,7 +4728,7 @@ RESPONSIVE
 
 /* Mobile screens */
 @media (max-width: 576px) {
-    .classhub-ticker {
+    .classreg-ticker {
         height: 36px;
     }
 
@@ -4762,14 +4762,14 @@ RESPONSIVE
 
 
 /* ==========================================
-   CLASSHUB STUDENT REGISTRATION MODAL
+   CLASSREG STUDENT REGISTRATION MODAL
 ========================================== */
 
-.classhub-modal .modal-dialog {
+.classreg-modal .modal-dialog {
     max-width: 720px;
 }
 
-.classhub-modal .modal-content {
+.classreg-modal .modal-content {
     background: #ffffff;
     box-shadow: 0 25px 80px rgba(10, 29, 59, 0.25);
 }
@@ -4939,7 +4939,7 @@ RESPONSIVE
 /* Responsive layout */
 
 @media (max-width: 576px) {
-    .classhub-modal {
+    .classreg-modal {
         padding: 12px;
     }
 
@@ -4955,7 +4955,7 @@ RESPONSIVE
         font-size: 13px;
     }
 
-    .classhub-modal .modal-body {
+    .classreg-modal .modal-body {
         padding: 22px !important;
     }
 
@@ -5019,7 +5019,7 @@ RESPONSIVE
    CHAT WINDOW
 ========================= */
 
-.classhub-chat {
+.classreg-chat {
     position: fixed;
     right: 28px;
     bottom: 95px;
@@ -5051,7 +5051,7 @@ RESPONSIVE
         visibility 0.22s ease;
 }
 
-.classhub-chat.chat-open {
+.classreg-chat.chat-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -5272,7 +5272,7 @@ RESPONSIVE
         padding: 13px 19px;
     }
 
-    .classhub-chat {
+    .classreg-chat {
         right: 12px;
         bottom: 82px;
         width: calc(100vw - 24px);
@@ -5282,7 +5282,7 @@ RESPONSIVE
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .classhub-chat,
+    .classreg-chat,
     .chat-toggle {
         transition: none;
     }
@@ -5292,7 +5292,7 @@ RESPONSIVE
 
 
 /* =====================================================
-   CLASSHUB - STUDENT DASHBOARD
+   CLASSREG - STUDENT DASHBOARD
    ===================================================== */
 
 .student-dashboard,
@@ -5960,7 +5960,7 @@ section.bg-light.min-vh-100 .alert {
 
 
     /* ==========================
-       CLASSHUB 404 ERROR PAGE
+       CLASSREG 404 ERROR PAGE
     ========================== */
 
     .error-page {
